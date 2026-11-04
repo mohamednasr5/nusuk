@@ -1131,7 +1131,7 @@ footer a:hover {
     <!-- Main Key Claim Card -->
     <section class="card">
       <h2>احصل على مفتاحك الآن</h2>
-      <p class="sub">اضغط على الزر لاستخراج مفتاح جديد؛ سيتم نسخه لحافظتك وتوجيهك لخدمة نسك</p>
+      <p class="sub">اضغط على الزر لنسخ كود جديد وفتح تطبيق نُسُك مباشرة على هاتفك</p>
 
       <div class="codebox" id="codebox" aria-live="polite">
         <span id="codeboxText">اضغط على الزر بالأسفل لاستخراج مفتاحك</span>
@@ -1141,15 +1141,15 @@ footer a:hover {
       <div class="key-actions-row" id="keyActionsRow">
         <button type="button" class="btn-secondary" id="btnCopyAgain">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-          <span>نسخ المفتاح مجدداً</span>
+          <span>نسخ الكود مجدداً</span>
         </button>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="btnOpenWeb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          <span>فتح في المتصفح</span>
-        </a>
-        <a href="https://services.nusuk.sa/app?p=27&id=NG-OCRFHaTW" target="_blank" rel="noopener noreferrer" class="btn-secondary highlight" id="btnOpenApp">
+        <a href="https://services.nusuk.sa/app?p=27" target="_blank" rel="noopener noreferrer" class="btn-secondary highlight" id="btnOpenWeb">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
-          <span>تثبيت / فتح التطبيق</span>
+          <span>فتح تطبيق نُسُك المباشر 📱</span>
+        </a>
+        <a href="https://services.nusuk.sa/app?p=27&id=NG-OCRFHaTW" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="btnOpenApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>تثبيت التطبيق (إذا لم يكن لديك)</span>
         </a>
       </div>
 
@@ -1158,7 +1158,7 @@ footer a:hover {
           <circle cx="8" cy="15" r="5"/>
           <path d="m11.5 11.5 8-8M16 4l4 4m-7 1 3 3"/>
         </svg>
-        <span>مفتاح جديد متاح – اضغط لنسخه</span>
+        <span>كود جديد متاح – اضغط لنسخه وفتح تطبيق نُسُك</span>
       </button>
 
       <p class="small-note">يتم حفظ المفاتيح المستخرجة محلياً على هذا المتصفح لضمان عدم تكرار نفس المفتاح لك مرة أخرى.</p>
@@ -1297,7 +1297,7 @@ function update(animate = true) {
   document.getElementById("progressBar").style.width = pct + "%";
 
   button.disabled = available <= 0;
-  button.querySelector("span").textContent = available > 0 ? "مفتاح جديد متاح – اضغط لنسخه" : "انتهت جميع المفاتيح المتاحة";
+  button.querySelector("span").textContent = available > 0 ? "كود جديد متاح – اضغط لنسخه وفتح تطبيق نُسُك" : "انتهت جميع المفاتيح المتاحة";
   return used;
 }
 
@@ -1433,20 +1433,27 @@ async function claim(e) {
       currentClaimedKey = key;
       codebox.innerHTML = `
         <span style="font-size: 24px; font-family: monospace; letter-spacing: 2px;">${key}</span>
-        <span class="codebox-badge">✓ تم النسخ إلى الحافظة تلقائياً</span>
+        <span class="codebox-badge">✓ تم النسخ! الصقه في خانة الرمز بتطبيق نُسُك</span>
       `;
       codebox.classList.add("ready");
 
       // Setup secondary action links
-      const webUrl = "https://services.nusuk.sa/nusuk-svc/app?p=27&id=" + encodeURIComponent(key);
-      btnOpenWeb.href = webUrl;
+      const nusukAppUrl = "https://services.nusuk.sa/app?p=27";
+      btnOpenWeb.href = nusukAppUrl;
       keyActionsRow.classList.add("show");
 
       update();
-      showToast("تم نسخ المفتاح بنجاح! جارٍ فتح نسك…");
+      showToast("تم نسخ الكود! جارٍ فتح تطبيق نُسُك…");
 
-      // Open nusuk web in a new window/tab
-      window.open(webUrl, "_blank", "noopener,noreferrer");
+      // Open Nusuk App directly on phone (or web)
+      try {
+        const win = window.open(nusukAppUrl, "_blank", "noopener,noreferrer");
+        if (!win && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+          window.location.href = nusukAppUrl;
+        }
+      } catch (_) {
+        window.location.href = nusukAppUrl;
+      }
     } catch (err) {
       button.disabled = false;
       showToast("تعذر النسخ التلقائي. يرجى السماح بالحافظة ثم المحاولة.");
