@@ -3,206 +3,1526 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#092f27">
-<meta name="description" content="مفاتيح الخير — احصل على مفتاحك وانسخه لفتح خدمة نسك.">
-<title>مفاتيح الخير | نسك</title>
+<meta name="theme-color" content="#06231c">
+<meta name="description" content="مفاتيح الخير — بوابتك للحصول على مفاتيح خدمة نسك المعتمدة وتثبيت تطبيق نسك الرسمي لحجز تصاريح العمرة والروضة الشريفة.">
+<title>مفاتيح الخير | خدمة وتطبيق نُسُك</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--green:#082f27;--green2:#10503e;--gold:#d9ad52;--gold-light:#f5dfa5;--cream:#f8f4e9;--ink:#17372d;--muted:#74847c;--white:#fff;--line:#e7e9df;--shadow:0 22px 65px #082f2718}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 12% 12%,#dfc88b2b,transparent 34%),radial-gradient(ellipse at 90% 78%,#0e5b4310,transparent 34%),var(--cream);font-family:Cairo,Arial,sans-serif;color:var(--ink);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:radial-gradient(#9e874d  .7px,transparent .7px);background-size:22px 22px}
-button{font:inherit}.container{width:min(100% - 28px,960px);margin:auto;position:relative}
-header{height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;color:var(--green)}
-.brand-icon{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#145440,#06271f);display:grid;place-items:center;color:var(--gold-light);box-shadow:0 8px 18px #082f2725}
-.brand-icon svg{width:24px}.verse{font-family:Amiri,serif;color:#927239;background:#fff9;border:1px solid #d8c99f;border-radius:30px;padding:7px 13px;font-size:13px}
-.hero{position:relative;isolation:isolate;overflow:hidden;text-align:center;color:white;padding:36px 20px 34px;border-radius:30px;background:linear-gradient(135deg,#082d25,#104b3b 60%,#08271f);box-shadow:var(--shadow)}
-.hero:before,.hero:after{content:"";position:absolute;z-index:-1;border:1px solid #d9ad5233;border-radius:50%;width:330px;height:330px}.hero:before{top:-245px;right:-100px}.hero:after{bottom:-265px;left:-95px;width:390px;height:390px}
-.tag{display:inline-flex;align-items:center;gap:8px;border:1px solid #e7c77c70;border-radius:30px;padding:6px 14px;color:var(--gold-light);font-size:12px;font-weight:700;background:#fff1}
-h1{font:700 clamp(36px,7vw,55px)/1.35 Amiri,serif;margin:12px 0 4px;color:#fff4d9}
-.lead{max-width:570px;margin:0 auto;color:#d8e5dc;font-size:14px;line-height:2}
-.key-emblem{height:116px;display:grid;place-items:center;position:relative;margin:6px auto 0}
-.emblem-ring{position:absolute;width:94px;height:94px;border:1px solid #e5c5788c;border-radius:50%;box-shadow:0 0 0 12px #e5c57810,0 0 0 24px #e5c57808;animation:ring 3s ease-in-out infinite}
-.emblem-key{width:76px;height:76px;filter:drop-shadow(0 9px 13px #0005);animation:keyfloat 3s ease-in-out infinite}
-@keyframes keyfloat{50%{transform:translateY(-9px) rotate(7deg)}}@keyframes ring{50%{transform:scale(1.1);opacity:.65}}
-.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
-.stat{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:17px 19px;box-shadow:0 8px 25px #092f2709}
-.stat-icon{width:46px;height:46px;flex:0 0 46px;border-radius:15px;display:grid;place-items:center;background:#edf5ef;color:#176348}.stat-icon.gold{background:#fbf3df;color:#a67a2d}.stat-icon svg{width:23px}
-.stat-label{font-size:12px;color:var(--muted);font-weight:700}.stat-number{font-size:27px;line-height:1.4;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums}
-.card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(19px,4vw,34px);box-shadow:0 14px 42px #092f270b;text-align:center}
-.card h2{font-size:20px;margin:0 0 4px;color:var(--green)}.sub{margin:0 0 20px;font-size:12px;color:var(--muted)}
-.codebox{min-height:60px;border:1px dashed #d7c18b;background:#fcfaf4;border-radius:15px;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px;margin-bottom:15px;color:#a17c39;font-size:18px;font-weight:900;letter-spacing:1.1px;direction:ltr}
-.codebox.ready{border-style:solid;border-color:#cfe1d5;background:#f3f8f4;color:#104b38}
-.action{width:100%;min-height:58px;border:1px solid #bd8b31;border-radius:17px;background:linear-gradient(110deg,#f3d990,#d3a13f);color:#342407;font-size:16px;font-weight:900;box-shadow:0 8px 20px #c59a4933;display:flex;align-items:center;justify-content:center;gap:11px;cursor:pointer;transition:.2s}
-.action:hover{transform:translateY(-2px);box-shadow:0 12px 24px #c59a4944}.action:active{transform:scale(.99)}.action:disabled{opacity:.55;cursor:not-allowed;transform:none}
-.action svg{width:22px}.small-note{font-size:11px;color:#87938c;line-height:1.9;margin:12px 0 0}
-.progress-area{text-align:right;margin-top:20px}.progress-head{display:flex;justify-content:space-between;gap:10px;color:#75847c;font-size:11px;margin-bottom:8px}.progress{height:7px;border-radius:20px;background:#edf0e9;overflow:hidden}.progress>span{display:block;width:0;height:100%;background:linear-gradient(90deg,#b88a39,#f0d58d);transition:width .35s}
-.feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.feature{border:1px solid #e9e9df;background:#ffffffb8;border-radius:16px;padding:13px 8px;text-align:center;color:#52675d;font-size:11px;font-weight:700}.feature svg{display:block;width:22px;height:22px;margin:0 auto 6px;color:#b68a3d}
-.dua{text-align:center;margin:27px 0 13px;font:20px/1.9 Amiri,serif;color:#6d796f}.dua:before{content:"✦";display:block;color:#c79a45;font-size:15px}
-footer{text-align:center;color:#89948d;font-size:11px;line-height:2;padding:8px 0 26px}footer a{color:#176348;font-weight:900;text-decoration:none;border-bottom:1px solid #17634855}
-.toast{position:fixed;z-index:30;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.25s;background:#103e32;color:#fff;border:1px solid #d9ad5266;border-radius:14px;padding:12px 18px;font-size:13px;font-weight:700;box-shadow:0 12px 35px #0003;max-width:calc(100% - 28px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
-/* Intro door scene */
-.intro{position:fixed;z-index:100;inset:0;background:#081e1a;display:grid;place-items:center;overflow:hidden;perspective:1500px;transition:opacity .7s,visibility .7s}
-.intro.hide{opacity:0;visibility:hidden;pointer-events:none}
-.door-stage{position:relative;width:min(88vw,540px);height:min(88vh,760px);min-height:470px;overflow:hidden;background:#112e27;box-shadow:0 0 90px #0009;border:1px solid #d6ad5b88;border-radius:8px}
-.door-scene{position:absolute;inset:0;background:linear-gradient(#091c19a8,#091c1966),url("assets/kaaba-door-scene.jpg") center/cover no-repeat;transform:scale(1.12);transition:transform 2.4s ease}
-.door-glow{position:absolute;inset:0;background:radial-gradient(ellipse at center,#ffe7a566,transparent 55%);opacity:0;transition:opacity 1.2s}
-.door-panel{position:absolute;top:0;bottom:0;width:50%;background:#0b3029;transform-style:preserve-3d;backface-visibility:hidden;z-index:3}
-.door-panel.left{left:0;transform-origin:left center;background:url("assets/door-left.webp") right center/auto 100% no-repeat}
-.door-panel.right{right:0;transform-origin:right center;background:url("assets/door-right.webp") left center/auto 100% no-repeat}
-.door-key{position:absolute;z-index:5;width:min(68%,340px);height:auto;left:50%;top:53%;transform:translate(-50%,-50%) rotate(-8deg);filter:drop-shadow(0 0 18px #ffd36c);transition:all 1.1s cubic-bezier(.2,.8,.2,1)}
-.door-caption{position:absolute;z-index:6;bottom:24px;left:12px;right:12px;text-align:center;color:#f6e7c1;font:22px Amiri,serif;text-shadow:0 2px 9px #000}
-.intro.unlock .door-key{left:50%;top:50%;transform:translate(-50%,-50%) rotate(0) scale(.45);opacity:0}
-.intro.open .door-panel.left{transform:rotateY(-88deg);transition:transform 2s cubic-bezier(.65,0,.25,1)}
-.intro.open .door-panel.right{transform:rotateY(88deg);transition:transform 2s cubic-bezier(.65,0,.25,1)}
-.intro.open .door-scene{transform:scale(1.35)}.intro.open .door-glow{opacity:1}
-.intro.open .door-caption{opacity:0;transition:opacity .5s}
-.skip{position:absolute;z-index:10;top:15px;left:15px;border:1px solid #ffffff66;background:#061d18a8;color:#fff;border-radius:30px;padding:7px 13px;font:12px Cairo;cursor:pointer}
-@media(max-width:560px){.container{width:calc(100% - 20px)}header{height:65px}.brand{font-size:16px}.brand-icon{width:38px;height:38px}.verse{font-size:11px;padding:6px 9px}.hero{border-radius:23px;padding:25px 15px}.key-emblem{height:96px}.emblem-key{width:65px}.stats{gap:8px;margin:12px 0}.stat{padding:13px 10px;gap:8px;border-radius:16px}.stat-icon{width:38px;height:38px;flex-basis:38px}.stat-number{font-size:23px}.stat-label{font-size:10px}.card{border-radius:21px;padding:20px 14px}.action{font-size:14px}.feature-row{gap:7px}.feature{font-size:10px;padding:11px 4px}.door-stage{width:100vw;height:100dvh;min-height:0;border:0;border-radius:0}.door-panel.left,.door-panel.right{background-size:auto 100%}.door-caption{font-size:19px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+:root {
+  --green-950: #041914;
+  --green-900: #06241d;
+  --green-850: #0a332a;
+  --green-800: #0f4639;
+  --green-700: #145949;
+  --green-600: #1a725e;
+  --green-100: #e5f3ed;
+  --green-50:  #f0f8f4;
+  --gold-200:  #fdf0cf;
+  --gold-300:  #f9e19d;
+  --gold-400:  #f1cb68;
+  --gold-500:  #dfad3b;
+  --gold-600:  #b78822;
+  --gold-700:  #8b6413;
+  --cream:     #f8f5ed;
+  --cream-card:#ffffff;
+  --ink:       #132c24;
+  --ink-light: #2c4a40;
+  --muted:     #687f75;
+  --line:      #e4e8df;
+  --line-gold: rgba(223, 173, 59, 0.35);
+  --shadow-sm: 0 4px 18px rgba(6, 36, 29, 0.05);
+  --shadow-md: 0 12px 36px rgba(6, 36, 29, 0.08);
+  --shadow-lg: 0 24px 65px rgba(6, 36, 29, 0.13);
+  --shadow-gold: 0 10px 32px rgba(223, 173, 59, 0.3);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 60% 45% at 10% 8%, rgba(223, 173, 59, 0.16), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 90% 85%, rgba(20, 89, 73, 0.14), transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), transparent 100%),
+    var(--cream);
+  font-family: Cairo, system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Islamic background geometric subtle overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: 
+    radial-gradient(var(--gold-600) 0.8px, transparent 0.8px),
+    radial-gradient(var(--green-700) 0.8px, transparent 0.8px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  z-index: -1;
+}
+
+button { font: inherit; cursor: pointer; border: none; outline: none; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: min(100% - 32px, 940px);
+  margin: 0 auto;
+  position: relative;
+  padding: 10px 0 30px;
+}
+
+/* Header */
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 900;
+  font-size: 21px;
+  color: var(--green-900);
+  letter-spacing: -0.3px;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #165b4a, #06271f);
+  display: grid;
+  place-items: center;
+  color: var(--gold-300);
+  box-shadow: 0 8px 22px rgba(6, 36, 29, 0.22);
+  border: 1px solid rgba(223, 173, 59, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-icon:hover {
+  transform: rotate(-6deg) scale(1.05);
+  box-shadow: 0 10px 28px rgba(223, 173, 59, 0.35);
+}
+.brand-icon svg { width: 26px; height: 26px; }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.verse {
+  font-family: Amiri, serif;
+  color: var(--gold-700);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(223, 173, 59, 0.45);
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 13.5px;
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 30px;
+  font-size: 12.5px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.btn-app-quick {
+  background: linear-gradient(135deg, #104e3f, #072a22);
+  color: #fff;
+  border: 1px solid rgba(245, 203, 104, 0.4);
+  box-shadow: 0 4px 14px rgba(6, 36, 29, 0.16);
+}
+.btn-app-quick:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 36, 29, 0.25);
+  border-color: var(--gold-400);
+}
+.btn-app-quick svg { width: 15px; height: 15px; color: var(--gold-300); }
+
+.btn-replay {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--green-800);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+.btn-replay:hover {
+  background: #fff;
+  color: var(--gold-600);
+  transform: translateY(-2px);
+  border-color: rgba(223, 173, 59, 0.5);
+}
+.btn-replay svg { width: 14px; height: 14px; }
+
+/* Hero Section */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  padding: 42px 24px 38px;
+  border-radius: 32px;
+  background: linear-gradient(140deg, #072921 0%, #0d4638 52%, #052019 100%);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(223, 173, 59, 0.35);
+}
+
+.hero::before, .hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::before {
+  width: 420px;
+  height: 420px;
+  top: -240px;
+  right: -120px;
+  border: 1px dashed rgba(223, 173, 59, 0.22);
+  background: radial-gradient(circle, rgba(223, 173, 59, 0.08), transparent 70%);
+  animation: slowSpin 38s linear infinite;
+}
+.hero::after {
+  width: 480px;
+  height: 480px;
+  bottom: -280px;
+  left: -140px;
+  border: 1px dashed rgba(245, 207, 115, 0.18);
+  background: radial-gradient(circle, rgba(20, 89, 73, 0.2), transparent 70%);
+  animation: slowSpinReverse 45s linear infinite;
+}
+@keyframes slowSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes slowSpinReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(245, 203, 104, 0.5);
+  border-radius: 30px;
+  padding: 6px 18px;
+  color: var(--gold-200);
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font: 700 clamp(36px, 7vw, 56px)/1.3 Amiri, serif;
+  margin: 8px 0 10px;
+  background: linear-gradient(180deg, #ffffff 10%, #fbedc5 60%, #e2b755 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.25));
+}
+
+.lead {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #dbebe2;
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 500;
+}
+
+/* Key Emblem Animation */
+.key-emblem {
+  height: 128px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  margin: 14px auto 0;
+}
+.emblem-ring {
+  position: absolute;
+  width: 104px;
+  height: 104px;
+  border: 1.5px solid rgba(245, 207, 115, 0.7);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 14px rgba(245, 207, 115, 0.12),
+    0 0 0 28px rgba(245, 207, 115, 0.05),
+    0 0 35px rgba(223, 173, 59, 0.3);
+  animation: ringPulse 3.2s ease-in-out infinite;
+}
+.emblem-key {
+  width: 84px;
+  height: 84px;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.45));
+  animation: keyFloat 3.2s ease-in-out infinite;
+  z-index: 2;
+}
+@keyframes keyFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-11px) rotate(8deg) scale(1.04); }
+}
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.12); opacity: 0.45; }
+}
+
+/* NUSUK APP DEDICATED BANNER CARD */
+.nusuk-app-banner {
+  margin: 22px 0 14px;
+  background: linear-gradient(135deg, #0b382d 0%, #135544 55%, #082d24 100%);
+  border: 1.5px solid rgba(241, 203, 104, 0.5);
+  border-radius: 26px;
+  padding: 24px 28px;
+  color: white;
+  box-shadow: 0 14px 40px rgba(6, 36, 29, 0.18);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.nusuk-app-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(241, 203, 104, 0.18), transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+.app-banner-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1b6d58, #0b382d);
+  border: 1.5px solid var(--gold-400);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 0 14px rgba(245, 207, 115, 0.2);
+  color: var(--gold-300);
+  flex-shrink: 0;
+  position: relative;
+}
+.app-banner-icon svg { width: 36px; height: 36px; }
+.app-badge-verified {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background: #107c41;
+  color: white;
+  border: 2px solid #0b382d;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+}
+.app-banner-info h3 {
+  font-size: 19px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-banner-info h3 .official-tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  background: rgba(241, 203, 104, 0.2);
+  border: 1px solid rgba(241, 203, 104, 0.5);
+  color: var(--gold-200);
+  border-radius: 20px;
+  font-weight: 600;
+}
+.app-banner-info p {
+  font-size: 13.5px;
+  color: #d1e5db;
+  line-height: 1.6;
+}
+.app-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 11.5px;
+  color: var(--gold-200);
+}
+.app-perks span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-install-nusuk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 14px 24px;
+  background: linear-gradient(110deg, #fce49d, #dfad3b 45%, #b9861e 100%);
+  color: #261b05;
+  font-size: 15.5px;
+  font-weight: 900;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(223, 173, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.btn-install-nusuk::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shineSweep 3.5s infinite;
+}
+@keyframes shineSweep {
+  0% { left: -100%; }
+  40%, 100% { left: 160%; }
+}
+.btn-install-nusuk:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(223, 173, 59, 0.55);
+}
+.btn-install-nusuk:active {
+  transform: translateY(0) scale(0.98);
+}
+.btn-install-nusuk svg { width: 20px; height: 20px; }
+
+/* Stats Cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(223, 173, 59, 0.4);
+}
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  border-radius: 17px;
+  display: grid;
+  place-items: center;
+  background: #edf6f1;
+  color: #125e45;
+  box-shadow: inset 0 0 10px rgba(18, 94, 69, 0.08);
+}
+.stat-icon.gold {
+  background: #fbf4e2;
+  color: #9d7324;
+  box-shadow: inset 0 0 10px rgba(157, 115, 36, 0.08);
+}
+.stat-icon svg { width: 25px; height: 25px; }
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.stat-number {
+  font-size: 30px;
+  line-height: 1.3;
+  font-weight: 900;
+  color: var(--green-900);
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* Card: Main Key Area */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(22px, 4.5vw, 38px);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-700), var(--gold-400), var(--green-700));
+}
+.card h2 {
+  font-size: 23px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  color: var(--green-900);
+}
+.card .sub {
+  margin: 0 0 22px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+/* Codebox */
+.codebox {
+  min-height: 72px;
+  border: 1.5px dashed rgba(223, 173, 59, 0.6);
+  background: #fdfcf9;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  color: #9c7526;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  direction: ltr;
+  position: relative;
+  transition: all 0.35s ease;
+  user-select: all;
+}
+.codebox.ready {
+  border-style: solid;
+  border-color: #3ba779;
+  background: linear-gradient(145deg, #f1f8f4, #e6f4ec);
+  color: #0d4634;
+  box-shadow: 0 6px 20px rgba(19, 85, 68, 0.12), inset 0 0 15px rgba(255, 255, 255, 0.8);
+  animation: keyPop 0.45s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+@keyframes keyPop {
+  0% { transform: scale(0.94); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.codebox-badge {
+  font-size: 11px;
+  letter-spacing: 0;
+  padding: 3px 10px;
+  background: #14694e;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 700;
+  direction: rtl;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Post Claim Quick Actions Row */
+.key-actions-row {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.key-actions-row.show {
+  display: grid;
+  animation: fadeInDown 0.3s ease;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-secondary {
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 12.5px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  border: 1px solid var(--line);
+  background: #fbfbf9;
+  color: var(--ink-light);
+}
+.btn-secondary:hover {
+  background: #ffffff;
+  border-color: var(--gold-500);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  color: var(--green-900);
+}
+.btn-secondary svg { width: 16px; height: 16px; }
+
+.btn-secondary.highlight {
+  background: #0f4a3d;
+  color: #fff;
+  border-color: rgba(241, 203, 104, 0.4);
+}
+.btn-secondary.highlight:hover {
+  background: #145e4e;
+  border-color: var(--gold-400);
+  color: var(--gold-200);
+}
+
+/* Main Action Button */
+.action {
+  width: 100%;
+  min-height: 64px;
+  border: 1.5px solid #c9982f;
+  border-radius: 20px;
+  background: linear-gradient(110deg, #f7df99 0%, #ddab38 48%, #ba871e 100%);
+  color: #271b04;
+  font-size: 17.5px;
+  font-weight: 900;
+  box-shadow: 0 10px 28px rgba(197, 154, 73, 0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.action::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: shineSweep 3s infinite;
+}
+.action:hover {
+  transform: translateY(-2.5px);
+  box-shadow: 0 14px 34px rgba(197, 154, 73, 0.5);
+}
+.action:active {
+  transform: scale(0.99);
+}
+.action:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.action svg { width: 24px; height: 24px; flex-shrink: 0; }
+
+.small-note {
+  font-size: 12px;
+  color: #7b8d84;
+  line-height: 1.9;
+  margin: 14px 0 0;
+}
+
+/* Progress Bar */
+.progress-area {
+  text-align: right;
+  margin-top: 24px;
+}
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+.progress {
+  height: 9px;
+  border-radius: 20px;
+  background: #edf1ea;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.progress > span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #b88a39, #f7df99 70%, #dca835 100%);
+  border-radius: 20px;
+  transition: width 0.45s ease;
+  box-shadow: 0 0 10px rgba(223, 173, 59, 0.5);
+}
+
+/* Feature Pills Row */
+.feature-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+.feature {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  padding: 14px 8px;
+  text-align: center;
+  color: #4b6257;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.feature:hover {
+  transform: translateY(-2px);
+  border-color: rgba(223, 173, 59, 0.45);
+}
+.feature svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto 7px;
+  color: var(--gold-600);
+}
+
+/* Dua Section */
+.dua {
+  text-align: center;
+  margin: 32px 0 16px;
+  padding: 24px 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(251, 246, 233, 0.8));
+  border: 1.5px solid rgba(223, 173, 59, 0.35);
+  border-radius: 24px;
+  font: 21px/2 Amiri, serif;
+  color: #4f5f54;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.dua::before {
+  content: "✦ ﷽ ✦";
+  display: block;
+  font-family: Cairo, sans-serif;
+  color: var(--gold-600);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.dua-name {
+  font-family: Cairo, sans-serif;
+  font-weight: 800;
+  font-size: 14.5px;
+  color: var(--green-900);
+  margin-top: 6px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: #7b8e84;
+  font-size: 12px;
+  line-height: 2.1;
+  padding: 10px 0 32px;
+}
+footer a {
+  color: var(--green-800);
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(20, 89, 73, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+footer a:hover {
+  color: var(--gold-600);
+  border-color: var(--gold-600);
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  z-index: 1000;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  background: linear-gradient(135deg, #0a3328, #051d16);
+  color: #fff;
+  border: 1.5px solid rgba(241, 203, 104, 0.6);
+  border-radius: 16px;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  max-width: calc(100% - 32px);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+/* Canvas Particle Explosion */
+#fxCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* 3D Intro Door Scene */
+.intro {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: #061914;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  perspective: 1500px;
+  transition: opacity 0.75s ease, visibility 0.75s ease;
+}
+.intro.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.door-stage {
+  position: relative;
+  width: min(88vw, 540px);
+  height: min(88vh, 760px);
+  min-height: 480px;
+  overflow: hidden;
+  background: #09211a;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.95);
+  border: 1.5px solid rgba(223, 173, 59, 0.6);
+  border-radius: 12px;
+}
+.door-scene {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(7, 24, 20, 0.65), rgba(7, 24, 20, 0.4)), url("assets/kaaba-door-scene.jpg") center/cover no-repeat;
+  transform: scale(1.1);
+  transition: transform 2.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.door-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 235, 170, 0.8) 0%, rgba(223, 173, 59, 0.35) 45%, transparent 70%);
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  mix-blend-mode: screen;
+}
+.door-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: #0b3029;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  z-index: 3;
+}
+.door-panel.left {
+  left: 0;
+  transform-origin: left center;
+  background: url("assets/door-left.webp") right center/auto 100% no-repeat;
+}
+.door-panel.right {
+  right: 0;
+  transform-origin: right center;
+  background: url("assets/door-right.webp") left center/auto 100% no-repeat;
+}
+.door-key {
+  position: absolute;
+  z-index: 5;
+  width: min(68%, 340px);
+  height: auto;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  filter: drop-shadow(0 0 22px rgba(255, 215, 115, 0.9));
+  transition: all 1.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.door-caption {
+  position: absolute;
+  z-index: 6;
+  bottom: 28px;
+  left: 14px;
+  right: 14px;
+  text-align: center;
+  color: #fff0cf;
+  font: 24px Amiri, serif;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+  letter-spacing: 0.5px;
+}
+.intro.unlock .door-key {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0.42);
+  opacity: 0;
+}
+.intro.open .door-panel.left {
+  transform: rotateY(-90deg);
+  transition: transform 2.2s cubic-bezier(0.65, 0, 0.25, 1);
+}
+.intro.open .door-panel.right {
+  transform: rotateY(90deg);
+  transition: transform 2.2s cubic-bezier(0.65, 0, 0.25, 1);
+}
+.intro.open .door-scene {
+  transform: scale(1.36);
+}
+.intro.open .door-glow {
+  opacity: 1;
+}
+.intro.open .door-caption {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.skip {
+  position: absolute;
+  z-index: 10;
+  top: 18px;
+  left: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(6, 25, 20, 0.75);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font: 700 13px Cairo;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.skip:hover {
+  background: rgba(6, 25, 20, 0.95);
+  border-color: var(--gold-400);
+  transform: scale(1.04);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nusuk-app-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 22px 18px;
+    gap: 16px;
+  }
+  .app-banner-icon { margin: 0 auto; }
+  .app-banner-info h3 { justify-content: center; }
+  .app-perks { justify-content: center; }
+  .btn-install-nusuk { width: 100%; }
+  .feature-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .container { width: calc(100% - 22px); }
+  header { height: auto; padding: 12px 0; flex-wrap: wrap; }
+  .brand { font-size: 18px; }
+  .brand-icon { width: 40px; height: 40px; }
+  .verse { display: none; }
+  .header-actions { width: 100%; justify-content: space-between; margin-top: 6px; }
+  .hero { border-radius: 24px; padding: 28px 16px; }
+  .key-emblem { height: 105px; }
+  .emblem-key { width: 68px; }
+  .emblem-ring { width: 86px; height: 86px; }
+  .stats { gap: 10px; margin: 14px 0; }
+  .stat { padding: 14px 12px; gap: 10px; border-radius: 18px; }
+  .stat-icon { width: 42px; height: 42px; flex-basis: 42px; }
+  .stat-number { font-size: 24px; }
+  .stat-label { font-size: 11px; }
+  .card { border-radius: 22px; padding: 20px 14px; }
+  .codebox { font-size: 16px; min-height: 64px; }
+  .key-actions-row { grid-template-columns: 1fr; }
+  .action { font-size: 15px; min-height: 58px; }
+  .door-stage { width: 100vw; height: 100dvh; min-height: 0; border: 0; border-radius: 0; }
+  .door-caption { font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 </head>
 <body>
+<canvas id="fxCanvas"></canvas>
+
+<!-- 3D Kaaba Door Intro Scene -->
 <div class="intro" id="intro" aria-label="مقدمة فتح الباب">
-  <button class="skip" id="skipIntro" type="button">تخطي المقدمة</button>
+  <button class="skip" id="skipIntro" type="button">تخطي المقدمة ✕</button>
   <div class="door-stage">
-    <div class="door-scene"></div><div class="door-glow"></div>
-    <div class="door-panel left"></div><div class="door-panel right"></div>
-    <img class="door-key" src="assets/key.webp" alt="">
-    <div class="door-caption">بسم الله نبدأ…</div>
+    <div class="door-scene"></div>
+    <div class="door-glow"></div>
+    <div class="door-panel left"></div>
+    <div class="door-panel right"></div>
+    <img class="door-key" src="assets/key.webp" alt="مفتاح الكعبة">
+    <div class="door-caption">بسم الله نبدأ… مفتاحك للخير</div>
   </div>
 </div>
 
 <div class="container">
-<header>
-  <div class="brand"><span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="5"/><path d="m11.5 11.5 8-8M16 4l4 4m-7 1 3 3"/></svg></span>مفاتيح الخير</div>
-  <div class="verse">﴿ وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ ﴾</div>
-</header>
+  <header>
+    <div class="brand-wrapper">
+      <div class="brand">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="15" r="5"/>
+            <path d="m11.5 11.5 8-8M16 4l4 4m-7 1 3 3"/>
+          </svg>
+        </span>
+        <span>مفاتيح الخير</span>
+      </div>
+      <div class="verse">﴿ وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ ﴾</div>
+    </div>
+    
+    <div class="header-actions">
+      <a href="https://services.nusuk.sa/app?p=27&id=NG-OCRFHaTW" target="_blank" rel="noopener noreferrer" class="btn-pill btn-app-quick" id="headerAppBtn" title="تثبيت تطبيق نسك المعتمد">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+          <path d="M12 18h.01"/>
+        </svg>
+        <span>تثبيت تطبيق نسك</span>
+      </a>
+      <button type="button" class="btn-pill btn-replay" id="replayIntro" title="إعادة تشغيل مشهد فتح الباب">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+        <span>المقدمة</span>
+      </button>
+    </div>
+  </header>
 
-<main>
-<section class="hero">
-  <div class="tag">✧ أكواد نسك ✧</div>
-  <h1>مفتاحك إلى الخير</h1>
-  <p class="lead">احصل على مفتاحك بنقرة واحدة، انسخه وافتح صفحة نسك مباشرة. نسأل الله أن يكتب لكم الخير والقبول.</p>
-  <div class="key-emblem"><div class="emblem-ring"></div><svg class="emblem-key" viewBox="0 0 100 100" fill="none"><defs><linearGradient id="g" x1="10" y1="10" x2="90" y2="90"><stop stop-color="#fff0b9"/><stop offset=".5" stop-color="#e8bd60"/><stop offset="1" stop-color="#b77b22"/></linearGradient></defs><circle cx="64" cy="31" r="21" stroke="url(#g)" stroke-width="9"/><circle cx="64" cy="31" r="7" stroke="url(#g)" stroke-width="5"/><path d="M49 46 17 78a7 7 0 0 0 10 10l8-8 7 7 8-8-7-7 13-13" stroke="url(#g)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-</section>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-tag">✧ نُسُك | خدمة التصاريح المعتمدة ✧</div>
+      <h1>مفتاحك إلى الخير</h1>
+      <p class="lead">احصل على مفتاحك بنقرة واحدة، انسخه وافتح خدمة نسك مباشرة لحجز تصاريح العمرة والروضة الشريفة. نسأل الله لكم القبول والبركة.</p>
+      
+      <div class="key-emblem">
+        <div class="emblem-ring"></div>
+        <svg class="emblem-key" viewBox="0 0 100 100" fill="none">
+          <defs>
+            <linearGradient id="g" x1="10" y1="10" x2="90" y2="90">
+              <stop stop-color="#fff4cc"/>
+              <stop offset=".45" stop-color="#e8be5c"/>
+              <stop offset="1" stop-color="#b0781c"/>
+            </linearGradient>
+          </defs>
+          <circle cx="64" cy="31" r="21" stroke="url(#g)" stroke-width="9"/>
+          <circle cx="64" cy="31" r="7" stroke="url(#g)" stroke-width="5"/>
+          <path d="M49 46 17 78a7 7 0 0 0 10 10l8-8 7 7 8-8-7-7 13-13" stroke="url(#g)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
 
-<section class="stats">
-  <article class="stat"><div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="5"/><path d="m11.5 11.5 8-8M16 4l4 4"/></svg></div><div><div class="stat-label">المفاتيح المتاحة</div><div class="stat-number" id="available">—</div></div></article>
-  <article class="stat"><div class="stat-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m20 7-10 10-5-5"/><circle cx="12" cy="12" r="10"/></svg></div><div><div class="stat-label">المفاتيح التي استخدمتها</div><div class="stat-number" id="used">0</div></div></article>
-</section>
+    <!-- Nusuk App Installation Banner Card -->
+    <section class="nusuk-app-banner">
+      <div class="app-banner-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+          <path d="M12 18h.01"/>
+          <path d="m9 9 3-3 3 3"/>
+          <path d="M12 6v7"/>
+        </svg>
+        <span class="app-badge-verified">✓</span>
+      </div>
+      <div class="app-banner-info">
+        <h3>
+          <span>تطبيق نُسُك الرسمي</span>
+          <span class="official-tag">رابط مباشر</span>
+        </h3>
+        <p>ثبّت تطبيق نسك الآن على هاتفك للربط المباشر مع المفتاح وحجز تصاريح العمرة وزيارة الروضة الشريفة بسهولة وسرعة.</p>
+        <div class="app-perks">
+          <span>✦ متوافق مع Android و iOS</span>
+          <span>✦ ربط فوري بالمفتاح</span>
+          <span>✦ حجز وإدارة التصاريح</span>
+        </div>
+      </div>
+      <div>
+        <a href="https://services.nusuk.sa/app?p=27&id=NG-OCRFHaTW" target="_blank" rel="noopener noreferrer" class="btn-install-nusuk" id="bannerInstallBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>تثبيت تطبيق نسك</span>
+        </a>
+      </div>
+    </section>
 
-<section class="card">
-  <h2>احصل على مفتاحك الآن</h2>
-  <p class="sub">اضغط على الزر لنسخ مفتاح جديد وفتح نسك في نافذة أخرى</p>
-  <div class="codebox" id="codebox" aria-live="polite">مفتاحك الجديد سيظهر هنا</div>
-  <button class="action" id="getKey" type="button">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
-    <span>مفتاح جديد متاح – اضغط لنسخه</span>
-  </button>
-  <p class="small-note">سيتم حفظ المفاتيح التي حصلت عليها في هذا المتصفح لمنع تكرارها على جهازك.</p>
-  <div class="progress-area"><div class="progress-head"><span>نسبة المفاتيح المستخدمة من هذا المتصفح</span><span id="percent">0٪</span></div><div class="progress"><span id="progressBar"></span></div></div>
-  <div class="feature-row">
-    <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>حفظ محلي</div>
-    <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 12-14h-7l-1-6Z"/></svg>سريع وبضغطة</div>
-    <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18m-7-7 7 7 7-7"/></svg>نسخ مباشر</div>
-  </div>
-</section>
-<div class="dua">أسألكم الدعاء لي ولأهلي<br>المهندس محمد حماد</div>
-</main>
-<footer>نسأل الله أن يكتب لكم الخير والقبول 🤍<br><a href="https://www.facebook.com/en.mohamed.nasr" target="_blank" rel="noopener noreferrer">محمد حماد</a><br>مفاتيح الخير</footer>
+    <!-- Stats Section -->
+    <section class="stats">
+      <article class="stat">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="15" r="5"/>
+            <path d="m11.5 11.5 8-8M16 4l4 4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-label">المفاتيح المتاحة للجميع</div>
+          <div class="stat-number" id="available">—</div>
+        </div>
+      </article>
+
+      <article class="stat">
+        <div class="stat-icon gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m20 7-10 10-5-5"/>
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-label">المفاتيح المستخرجة بجهازك</div>
+          <div class="stat-number" id="used">0</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Main Key Claim Card -->
+    <section class="card">
+      <h2>احصل على مفتاحك الآن</h2>
+      <p class="sub">اضغط على الزر لاستخراج مفتاح جديد؛ سيتم نسخه لحافظتك وتوجيهك لخدمة نسك</p>
+
+      <div class="codebox" id="codebox" aria-live="polite">
+        <span id="codeboxText">اضغط على الزر بالأسفل لاستخراج مفتاحك</span>
+      </div>
+
+      <!-- Quick Action Buttons for the claimed key -->
+      <div class="key-actions-row" id="keyActionsRow">
+        <button type="button" class="btn-secondary" id="btnCopyAgain">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>نسخ المفتاح مجدداً</span>
+        </button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="btnOpenWeb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span>فتح في المتصفح</span>
+        </a>
+        <a href="https://services.nusuk.sa/app?p=27&id=NG-OCRFHaTW" target="_blank" rel="noopener noreferrer" class="btn-secondary highlight" id="btnOpenApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          <span>تثبيت / فتح التطبيق</span>
+        </a>
+      </div>
+
+      <button class="action" id="getKey" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="15" r="5"/>
+          <path d="m11.5 11.5 8-8M16 4l4 4m-7 1 3 3"/>
+        </svg>
+        <span>مفتاح جديد متاح – اضغط لنسخه</span>
+      </button>
+
+      <p class="small-note">يتم حفظ المفاتيح المستخرجة محلياً على هذا المتصفح لضمان عدم تكرار نفس المفتاح لك مرة أخرى.</p>
+
+      <div class="progress-area">
+        <div class="progress-head">
+          <span>نسبة المفاتيح المستخرجة من هذا المتصفح</span>
+          <span id="percent">0٪</span>
+        </div>
+        <div class="progress">
+          <span id="progressBar"></span>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>حفظ محلي آمن</span>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 12-14h-7l-1-6Z"/></svg>
+          <span>سريع وبضغطة</span>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>نسخ تلقائي فوري</span>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          <span>دعم تطبيق نسك</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dua Section -->
+    <div class="dua">
+      ﴿ رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ ﴾
+      <br>
+      أسألكم خالص الدعاء لي ولوالدي ولأهلي
+      <div class="dua-name">المهندس محمد حماد</div>
+    </div>
+  </main>
+
+  <footer>
+    نسأل الله أن يكتب لكم الخير والقبول والزيارة المباركة 🤍<br>
+    تطوير وإعداد: <a href="https://www.facebook.com/en.mohamed.nasr" target="_blank" rel="noopener noreferrer">المهندس محمد حماد</a><br>
+    منصة مفاتيح الخير © 2026
+  </footer>
 </div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (() => {
 "use strict";
+
 const ALL_KEYS = ["NG-2pMYv9SD","NG-3LhRrRhX","NG-45ZzWdVW","NG-91ajDxba","NG-9kIZDEMW","NG-A6VcJmAK","NG-AcwE32Hb","NG-aoc1F9iO","NG-aqg5rQiu","NG-AxFHPghQ","NG-bCwWnJnq","NG-BDZSPtJh","NG-bghMN6qx","NG-BGmwRFTi","NG-C6d5gTME","NG-ca5LmABr","NG-CG91oTuX","NG-CGYZ4dDy","NG-Cp9EZj2b","NG-DgqUbDto","NG-eiIvk9rk","NG-Fb8Tc3Qm","NG-FdqGhrWc","NG-GrL4xCGa","NG-hrbO4UCi","NG-IfY7J4Yu","NG-ikyBdBcH","NG-K4yFqOdx","NG-kvBXkwbr","NG-lcqYsCUL","NG-LLpaVF4b","NG-lNLNFx2c","NG-LRoqOie0","NG-mtY8j4Kk","NG-mzZI51DM","NG-nIWAMoeX","NG-nnIFsz0w","NG-nNplNss1","NG-o84HltJ6","NG-Ow5jx6Tx","NG-paiLg0Tg","NG-pcebFJXh","NG-pgrhbVLs","NG-qUE5kDPd","NG-qyPAJOeP","NG-RAL5KIFQ","NG-RDm9Y0jd","NG-RFvG9Q22","NG-RHjZSqmF","NG-sdV1UItI","NG-SmvSl6X3","NG-TGmKN3cM","NG-wwh8JsEo","NG-WytifV2S","NG-wywKcQqY","NG-X1fxjY31","NG-xC6XWo2R","NG-y8GnBYlr","NG-yIKFnV8Q","NG-YM5lgas4","NG-YPQ5fDab","NG-yUUYaGuO","NG-YXtwBDuo","NG-zNYkHhfw","NG-ZomUjD0a","NG-ZYXNaum2","NG-00ieVdr5","NG-02Z8duT3","NG-04SSG4X5","NG-06yDoobW","NG-0AXgVzDW","NG-0CXRz7Kk","NG-0HE5JEnW","NG-0jaclQFU","NG-0WaMjM9A","NG-0XutbFWY","NG-0y2APmZa","NG-0ZNgTKyY","NG-15CImc7y","NG-1EkBCBRq","NG-1j3zQKiK","NG-1KLbuSFu","NG-2aVLZEN9","NG-2dlsiMcF","NG-2fTLgKjq","NG-2iFlGIEv","NG-2lH5aFec","NG-2Lt29drG","NG-2nD5zyvJ","NG-2zaX45hQ","NG-3AapLTxg","NG-3Adz0hY7","NG-3AiUhDbK","NG-3fxSAip8","NG-3GnzgzY2","NG-3nx2DibZ","NG-3zeHYEkE","NG-41eiM29Q","NG-455U7nJ6","NG-48KFyQAV","NG-4dYy6jfN","NG-4DZFcFt1","NG-4fj5TpEP","NG-4Hh0o0Od","NG-4llsqQqe","NG-4NmofX1A","NG-4pf835XH","NG-5Ke83M5e","NG-5tYowImF","NG-5zZu97xe","NG-61IwXq6V","NG-6CzF31Db","NG-6gJxY39m","NG-6pOncasF","NG-6TFles0D","NG-6vGc5cWa","NG-7dwNouGL","NG-7eUvndFl","NG-7l5LEFBu","NG-7pjsqSuJ","NG-7QczryrM","NG-7qgWR6bj","NG-83VPKn7E","NG-8G2pwbZp","NG-8lgMZufi","NG-8t7Eeo1N","NG-8y1xf3ZW","NG-8Z5o5aWi","NG-98yURHUu","NG-9CCXWkyv","NG-9IU0WShj","NG-9Nxx0XDk","NG-ADFQF1QJ","NG-agXYqTmV","NG-AioWaQCd","NG-Aj2uxtH2","NG-aJ9utB32","NG-AjeBr4lA","NG-am0ST22r","NG-aOg6SeY0","NG-aPLmut1U","NG-Arx7w26c","NG-AuaIcSaj","NG-aV6NwwLU","NG-AZUpdvg3","NG-b18iCRne","NG-b27RcbCv","NG-B29NsnsD","NG-B5KpW0tU","NG-B8hn8TYV","NG-baECVHbN","NG-baNGv4eu","NG-bavZx6c3","NG-bbvH6mqj","NG-bDJoc8Jx","NG-beo9bP7t","NG-bFiLORU3","NG-bGMiDH3p","NG-bhf6KUpQ","NG-BO0jvH3S","NG-C4ENySdW","NG-c6AgLlbX","NG-C6cRl4yl","NG-cNeou02y","NG-COkScUIW","NG-cpAUMKMY","NG-cSCyheJh","NG-ctMQGTS7","NG-cZg0gfMM","NG-D1fsBrWn","NG-dCeaBUSa","NG-dnhgO02X","NG-DpJ4Z8NN","NG-DPoZcZPV","NG-DVlON7d9","NG-e0FJ0EEu","NG-EgXehSem","NG-eKFf5QZz","NG-ekSR3m0s","NG-eLj0WnkE","NG-erTBBX5b","NG-erzetsAS","NG-evAW0taF","NG-eZiL1siE","NG-f5EHtLUn","NG-f62UY5uH","NG-F6yMC1NX","NG-F8c1y6h0","NG-F9D3wDMt","NG-FfORS7AV","NG-fHFAM1J4","NG-fHyi86mr","NG-FjaPlRQz","NG-fKFdifc5","NG-foxgkVTF","NG-FpdZWAhQ","NG-FQZyyRos","NG-FtFKZhI5","NG-fwouQzSC","NG-fYEFfBfz","NG-fYh5G8kp","NG-FyvAfgcH","NG-g6yMQpFv","NG-gBndtsGp","NG-GEvkCKyg","NG-gFhKXFc4","NG-GKchMKBc","NG-gME6ZAF0","NG-goeudXZg","NG-gpggiBU5","NG-gR64b0Rc","NG-GT1WX2fP","NG-GtT5y55a","NG-h0cR6U6q","NG-h1hMG0FO","NG-h42Luzum","NG-h5yPvCHb","NG-hgpUQ6Kr","NG-HHawgqY5","NG-HtlVIBFS","NG-hU29hYe7","NG-HVlCdt6E","NG-hzhkh0ci","NG-I5Kyiu2e","NG-i6DbZ9gc","NG-I6haak4k","NG-IajCwKDw","NG-iATQL5Zv","NG-IDdXUOHR","NG-Idfb3Kbf","NG-IERpvISd","NG-ig5WkyFe","NG-Iq6lGmHh","NG-irMvHiFy","NG-ITJHGJYM","NG-iVimdL7t","NG-ivmTWZke","NG-IwF9atvZ","NG-J8DLBiTS","NG-JdCFS76K","NG-ji6IQswS","NG-jibNPWFZ","NG-jiU5JRqt","NG-jjpbRfkm","NG-jpS7V2Os","NG-jrXWZyhh","NG-JV6E8iMt","NG-jypGqJzf","NG-jZ7RRHY8","NG-k4ZiPhVJ","NG-kbbxAQac","NG-kcgBxMB4","NG-KCSE03UX","NG-kH4VyoZ9","NG-KjgliPtG","NG-KLnem18K","NG-kPXqKf9P","NG-kV4fCzGx","NG-lAPiLeeS","NG-lbSLnawv","NG-Ldv5VqS8","NG-LftoeLRI","NG-LGPGrKgH","NG-LgxDeVfc","NG-lGxnLrL5","NG-LKOLiU69","NG-lLjt57XF","NG-lLtJQjfR","NG-loSgm7wc","NG-LRfZNJZB","NG-LT4BaQCY","NG-LYAxefwZ","NG-m0di2aGB","NG-m0yZJ96V","NG-m1DBQNsB","NG-mHbOnbJj","NG-mIlwauu1","NG-MkzYGxbT","NG-mNtB06E1","NG-mOnHDis4","NG-Mq0nZgXc","NG-mqY14XFc","NG-MrQ6zHmh","NG-mrSoNs7Y","NG-N327oFKf","NG-n4JnVvHF","NG-nab88Z8M","NG-nCIDLPx5","NG-NDVfnfPk","NG-nJRlvqvz","NG-nL2SQomL","NG-nOR274PN","NG-nR8o42co","NG-NWs2Wgo3","NG-NXDZDZad","NG-oHeUvuKb","NG-ojLnh4X9","NG-oo5MAw8g","NG-oQcGA3z5","NG-OQs6W64g","NG-ou2DbHS9","NG-owg2UVhT","NG-OwtUXfMH","NG-oXQkKnbE","NG-oy5p4DEz","NG-Ozxkdczw","NG-P4GzuC98","NG-PBC0EwWG","NG-pgNTYcbs","NG-phnDDUgE","NG-pjwBbXAM","NG-pPKTX3fq","NG-pWhw3f6W","NG-pZTHXK32","NG-Q2gSUtuc","NG-Q7IbeJrG","NG-qBCQbJ2P","NG-qc2HRfM3","NG-qdC9Dgdt","NG-qHz5de4y","NG-QkJl6xA0","NG-Qklol645","NG-qKO1QaTy","NG-qOmdMC8f","NG-qTBbyCeg","NG-qY5A8kbQ","NG-QYoWlUyq","NG-raFwnjLO","NG-rB8ijhWB","NG-rlQifcwp","NG-RO0w1RK3","NG-RPY2x8r0","NG-rQ9dam5D","NG-rQN07x2O","NG-rs3DYYX4","NG-RSCRiJWy","NG-rWKxOTZC","NG-RxYZG3mI","NG-SAHa9s7Q","NG-sBEbTrdK","NG-sCMyic55","NG-sduVkX6W","NG-SFI5Szxf","NG-SKkvbEA2","NG-slXnnYow","NG-snV3piuQ","NG-sO3GSIEy","NG-sP1JXKtn","NG-SpWpwfrt","NG-Sul6A9aX","NG-sVQ0xydB","NG-SWIOSBqA","NG-sZJcQ4jB","NG-t0PPaQBX","NG-tBao96QL","NG-tC1hO70B","NG-TCuaIml7","NG-tEwLVWPP","NG-thmYThp7","NG-TKx3zIQe","NG-tLKXZlyh","NG-tN4H8yUw","NG-tRRW4r4L","NG-TvFKL5jG","NG-TvlHT2hZ","NG-twFsasp6","NG-tycwIAvd","NG-tzWXCiiU","NG-u1h9wJYO","NG-u1U8aZjP","NG-U1v2LVat","NG-u4a24YgD","NG-ulVhYnEr","NG-UMBKZa2w","NG-UtI5sSTb","NG-uuoihvbK","NG-uxtfd0ih","NG-Uz2nbyar","NG-v2KAeCzy","NG-v3Guz7Nd","NG-VAbcJYSy","NG-VajL7hRr","NG-vBx7nKCV","NG-vDnroD0v","NG-vDr4ekJ3","NG-vg3brw3g","NG-Vgyyqne7","NG-VVuPjWM3","NG-vxCahcO9","NG-VXmmtlie","NG-vZj4esnh","NG-wBJHFcOS","NG-wcHyZYsF","NG-WcPDQ1W7","NG-WdtQGqgh","NG-we2ZopKZ","NG-wG5Zcf4B","NG-whcbeRAy","NG-WIjzFIeF","NG-wju8gJWa","NG-WM0BV4KD","NG-WNBabjUZ","NG-Wqsfhqkd","NG-Wr91QDYZ","NG-wroxIxrS","NG-wtUnnIZT","NG-WUuXbO2u","NG-wW8n6A20","NG-wyMquoUM","NG-x0ShUxXF","NG-x2GfCXde","NG-xd1PCvVC","NG-xdqJdBqZ","NG-Xg6y6g8j","NG-XGLntjGx","NG-xIdlEdTp","NG-XJCoNJ0q","NG-xJwCGzgy","NG-xLlTy7RS","NG-xLYm5R7f","NG-XpBwOoF8","NG-xpmk5aWd","NG-XsdEna4b","NG-XSZ4Q9tS","NG-xt4xwZdi","NG-XuptFDHs","NG-xxB2f9AB","NG-XzIX7jKM","NG-xzs4qQ9S","NG-y2kcbpZS","NG-y5B1cvjI","NG-Y6dwc6y4","NG-YeErEtnO","NG-yFdQ9xU4","NG-Yg7NRXgi","NG-YhCWGIcf","NG-YI6LKeV7","NG-YJDy5jd0","NG-YKEEVUGx","NG-YKR3hWRp","NG-yltXqXIO","NG-YnKuSY0A","NG-Ys57txJo","NG-YTDNq6lH","NG-YtonjrGe","NG-yU1Sqt7m","NG-YvaELQ2P","NG-ywgwTjJc","NG-yY5yIsjr","NG-yzRBfxSn","NG-z3DGUpiZ","NG-zcMQTeHi","NG-ZgS28gIb","NG-ZIFTOf9V","NG-zMR8nyuJ","NG-Znaz3mWG","NG-zO1yDX0l","NG-zu6bupz6","NG-zYiLd9ul","NG-zyMGELpy","NG-Zz0l7tMK","NG-0DV7c8Ue","NG-0eEhokZT","NG-0mvcUtSf","NG-0nxlWDDD","NG-0o1ES9hc","NG-0uHx3zXe","NG-0Zz0pt9b","NG-11S9gtWm","NG-179WDnvR","NG-1i1L7Fda","NG-1InQsOgL","NG-1KcS66gn","NG-1MLp8KJ8","NG-1P61W4oV","NG-1QRQ6MG9","NG-1tX8XjMS","NG-22awh7Be","NG-23smskW2","NG-24ZOKNse","NG-2Aifkb4R","NG-2eGRFn5c","NG-2tHUQs0X","NG-2tKJ2Z8H","NG-2VYzLEUh","NG-3BNFEp1Y","NG-3Eja4uK6","NG-3eotVWOe","NG-3R2tRjK0","NG-3s4fqvjy","NG-3tVxhnsE","NG-3Uau7NCv","NG-3uLWz1Ua","NG-3uUZS26M","NG-3UXeP8sm","NG-3wv2gczE","NG-45HuCYBl","NG-45N0Iiau","NG-47ge9TGC","NG-4aml1q1J","NG-4bBzBvC1","NG-4gWLKmIs","NG-4o9Qppch","NG-4sUpb34K","NG-4u5A3iBT","NG-4V4kmBTm","NG-4XKTByz8","NG-50mOojyb","NG-53GjXNv0","NG-53vleG27","NG-5dVsGQg8","NG-5iqRoi3T","NG-5jKfJG0W","NG-5JNP8B2e","NG-5lDzRMYo","NG-5PCQZbpj","NG-5uKetMgF","NG-62LIGXOr","NG-62znnOjg","NG-63FvLM6q","NG-65F7Ff1X","NG-68veDvhB","NG-6JIwruWY","NG-6kC2QJVM","NG-6VAWN2r8","NG-6YKcQ0Kg","NG-7FnhlYni","NG-7jpZ6279","NG-7L84JRGu","NG-7RiWFjT0","NG-7sgywFrN","NG-7vFXZ8fe","NG-84oQi6WP","NG-8CB1Slte","NG-8G0gYJrW","NG-8HNnQG2b","NG-8HwSq7LN","NG-8SgrWv1J","NG-8tjgJwx1","NG-8tRyu8nz","NG-8WtYpmBj","NG-8xWkoWAy","NG-9aWkuOz9","NG-9AyFNLMF","NG-9DSuGrXG","NG-9Hq1F4bG","NG-9iUgscGb","NG-9kVOAxD7","NG-9LPuAr6f","NG-9M6pDikt","NG-9spEUHjX","NG-9thz9wWS","NG-9vN8QUjn","NG-A1rESouc","NG-a39ef295","NG-a6puyTRq","NG-a7zUHFr2","NG-a8Eqc0B9","NG-aa0sj2Ky","NG-aAPX4rij","NG-ab9Rwkde","NG-afyCGhKe","NG-aHehSFrx","NG-AIHbSt1X","NG-AM5z9AsX","NG-aoYHh8Lg","NG-aSh8tAp3","NG-aSwX6mT9","NG-auaRYuWV","NG-AVfEnmv3","NG-avQsavRc","NG-AwZ7vxwV","NG-B5Do0ghf","NG-b6eOssYf","NG-B74pym3s","NG-Bbh2oWRr","NG-Bcd4em5d","NG-BCYhits4","NG-Bffx2yMY","NG-bJxT0dg3","NG-Bli56Kl2","NG-BLwpExqn","NG-bPb2AAS0","NG-Btu7WnR1","NG-BvkXJxLJ","NG-BxHw1AEN","NG-BzfimRDZ","NG-bzuZZXXx","NG-c5RfnvYc","NG-CaQmqWly","NG-ccrMl3F7","NG-cFepB1dp","NG-CJASc4AS","NG-CJtGzje2","NG-cKlH19mx","NG-cmarb9Hw","NG-CrjLCZ77","NG-CRPcpYpE","NG-CxjXkrNq","NG-CYtSVdur","NG-czGnEl45","NG-CZWd3GIW","NG-D4uoT2Kd","NG-d6jqBUWW","NG-D7RDBBzx","NG-D7y2hoPn","NG-DaeoXaGf","NG-dC0DGAlS","NG-DFYexOhE","NG-DGZfWsN0","NG-DhDuAiEY","NG-dIDI0J62","NG-dK5fmDX2","NG-dLjpLuaD","NG-dLV0CvVB","NG-dOEZxBDa","NG-DRlPbnpZ","NG-DtmBqNCR","NG-dToxIbls","NG-DuUEmjhk","NG-DWuPlwzs","NG-DwxGjYNb","NG-DZ5NtZsq","NG-E0JAHScU","NG-E2SVHtVD","NG-e5AZPcuE","NG-e5beaT8K","NG-e6Yk5Z0A","NG-Eb3EwHry","NG-EBmvjo0Z","NG-eBngmJT7","NG-efgcnjQ8","NG-EjIuuNtG","NG-EOeWXcD7","NG-EP64w1qL","NG-Eq4rVw3v","NG-Eq98G9Go","NG-EqhMaz6Q","NG-eskaMiIX","NG-EuTHhVIw","NG-ew8NeaZL","NG-Ey8VtB4K","NG-eYbPmB0c","NG-F0zX4ON3","NG-f14xB3PZ","NG-f2bbYFiY","NG-F2hcEw0B","NG-F2KSAHBL","NG-f2shikfA","NG-F7X2mMan","NG-FdOXZBtk","NG-FeiAzB1q","NG-fHlg0Scl","NG-FIvn9DBM","NG-fjKHVpco","NG-fSv8nrwK","NG-fvlYyHhd","NG-FyUo4bFY","NG-FZktblFt","NG-fzVDCsSh","NG-g5G6e2Pi","NG-G6BGRbLa","NG-G6OGyX9b","NG-GB6c4mFQ","NG-gC1HIihA","NG-GcVQNDAy","NG-gDeYoI5i","NG-Ge7EZrlz","NG-gedVxFLY","NG-geTXs63x","NG-gf6ANF9f","NG-GGXpWsvp","NG-gJGmA2ob","NG-GKPLlQMI","NG-GNPU9yg6","NG-gQCUyXTT","NG-GqrFEDGD","NG-gqwK8kUv","NG-gR2emz50","NG-GRUWCPOJ","NG-gUMeqXg3","NG-guz4W66M","NG-gWAoOmdy","NG-GYzuuVqb","NG-gz5455af","NG-h69i6ZSZ","NG-HB0Joh3S","NG-hCAQfHPx","NG-hcW5gOKi","NG-hEH6OYOV","NG-HGNg5Sqe","NG-HgupEUBx","NG-HkTC7ZEZ","NG-hKWVnpo4","NG-HLM1wVs5","NG-hoaXnlUH","NG-hOJtgCZX","NG-hrjvYfa1","NG-hye5g6T7","NG-i0pSJBgM","NG-I36Pc3GK","NG-I3efbQHY","NG-i5qLfgAR","NG-IAhOeM1d","NG-ID25MXTo","NG-IG3TbQFY","NG-IIJtS9me","NG-ILnii8Rc","NG-ipSszZHF","NG-iSscwUch","NG-isyZ1Jk3","NG-IyEgOkc6","NG-IYjDnDiE","NG-J3sEkf8I","NG-j50kz7ZY","NG-j69h2zKu","NG-J9EWN97x","NG-JBo2G4ZJ","NG-jHgSfzfR","NG-jnfk9NlD","NG-jNXWpw7m","NG-jOMz7rXQ","NG-JPAUyQlL","NG-jpVTKDoc","NG-jQ7f56ux","NG-jRjwjuTr","NG-jRwmbaFg","NG-jS2oPigO","NG-JvxfBpy8","NG-JXxcnph0","NG-k29MOAQ9","NG-K2rzQzlM","NG-k5BQWfFC","NG-K6UgfLBF","NG-kC3klUhJ","NG-kcEyNaz5","NG-KdEcKCz1","NG-kdGBm3Mb","NG-kfDIC3DV","NG-kfkImPR8","NG-KjEmbmO0","NG-kJumxi1q","NG-KoVS6DKZ","NG-kpDiyo9N","NG-KpHPIN7d","NG-KSSFjOjn","NG-kUtphrnG","NG-kW5qvj2m","NG-l1D7rGmD","NG-l6NY91gM","NG-L8IuGo12","NG-LAfR2GDZ","NG-lBDfVm10","NG-lFOJPX2V","NG-LhBK8yuw","NG-LLTqXOCr","NG-Ln0xs6HL","NG-lnUkQ1lf","NG-lQ0SGpRH","NG-LUfPnUPk","NG-Lum7ujqX","NG-luwYUAwt","NG-lXhCWsSc","NG-LXT7aX6b","NG-LzPLnrhn","NG-m0E7rumk","NG-m7E7Q7uA","NG-m8WEJ6Ri","NG-m9oqF7jF","NG-maMcyASM","NG-mBaEMx2a","NG-MccgIHR6","NG-miUfmtIf","NG-mjwM78lu","NG-mnvIhnxQ","NG-MOkK9EX2","NG-mVA07Tqc","NG-MVvS5FaW","NG-MWIwoVAG","NG-Nbu5U8fT","NG-Nj7hHYTS","NG-NofrbN9f","NG-noQMXYKL","NG-NRfB593q","NG-nrZHfSeW","NG-NRzQx2DH","NG-nSQjJ7tl","NG-nuh2qmtL","NG-NUhNqZW9","NG-NvQ40ZCd","NG-Nw2Gl347","NG-NZ2XuRJT","NG-oCW1KLvy","NG-oJO56Zhw","NG-OMkljpaN","NG-ONNWZRtW","NG-OUicjG3G","NG-OY1R6jCO","NG-p3VMbK7t","NG-palKvBNh","NG-pEPOO3Jf","NG-PeqjdZ9g","NG-PFB96lsg","NG-PFeaijmn","NG-pHmX3m3q","NG-PKBy0AYA","NG-PoAYZcfg","NG-PrNM25tu","NG-PRWHYnQ9","NG-PsSHl00B","NG-pTJziMar","NG-pwWY90Yi","NG-PXuXjOyz","NG-PZNxglrc","NG-Q9H5Es2e","NG-qch5dlvn","NG-QFyMi0ke","NG-QgSnoagI","NG-QhhM2IBE","NG-QMxoXB86","NG-QN0Wgj9Y","NG-QPGZIN1V","NG-QpZdLc0e","NG-qTsT9TpM","NG-qWFu1LBa","NG-Qwnrizn5","NG-QXEbDDcI","NG-R23dLuvZ","NG-ra3DrHYO","NG-rdbxabJJ","NG-ReL36GxY","NG-rffcf3WZ","NG-RMTwJQD8","NG-rPr88fBa","NG-RSQLTHgP","NG-RWdOQ6nE","NG-RWyoaEBB","NG-RyB9fBqH","NG-RYNgE7hE","NG-s55WG06v","NG-saxHqFBt","NG-sBYRljKn","NG-scYG8VpK","NG-sDGAjbS4","NG-SeZCjZXH","NG-sKjzmLH6","NG-skQh6uzH","NG-sNYAjug9","NG-soBEhbFH","NG-SSM5DcUJ","NG-Sstc5jig","NG-SvplDbeb","NG-swUwVGUY","NG-sy3Rt2Q3","NG-t35UyJG5","NG-t3XtwVGF","NG-T6DISRLm","NG-t6KAs9iA","NG-TEColXnN","NG-Tf38TnoB","NG-tj0H3ros","NG-TJ6g79Pf","NG-Tmx0tY6Z","NG-TNhNLYym","NG-tOCBfSt1","NG-tPq9NyGP","NG-TSkerPfG","NG-TU9UDoJd","NG-tUHXlKmg","NG-u5efv2kL","NG-u7bo3Fe5","NG-ubCn5nk6","NG-uhbnL2xn","NG-UNaP8yR8","NG-uOFt1kiZ","NG-UolFg8xq","NG-uT8jAGIt","NG-UTwz0vsq","NG-UUEdB9CZ","NG-UUZDUstf","NG-Uxa2otyf","NG-UylaOQjs","NG-uYqwV0BK","NG-uzeIVRou","NG-v2cZDZSt","NG-v3MwHIQz","NG-V7HXiiHX","NG-vbBgxv1v","NG-VkC0z1Dn","NG-vlmdwaDo","NG-vMFWeEXi","NG-VQioLrN3","NG-vr0Td3rb","NG-Vs93w1EZ","NG-VVHnTvaN","NG-VX9ADC9U","NG-vXxM2s5i","NG-VZzamhoX","NG-w2Ae3KEb","NG-w3gsYdmi","NG-W4fXivAY","NG-W4fxvCiV","NG-W5ih0WX2","NG-W76Z3F8Z","NG-w7PeFbZm","NG-Wb78DbJ8","NG-WBAad09U","NG-wc2e99dH","NG-WE4Pmy4K","NG-wFclpEU1","NG-Wj6WOdg4","NG-WJhGqWMB","NG-wlBvXGsi","NG-WpJaCrsh","NG-WuPZ69OV","NG-wWnqvbbE","NG-WX5YlnEC","NG-wXkkjpmr","NG-wZCkuMy6","NG-WZqYqNjU","NG-x3aEz3cW","NG-X6p4eYT5","NG-xANc0Y0h","NG-Xb2RGvdI","NG-XBhYOOnH","NG-xC2DSZeb","NG-Xg07i2K2","NG-xII62wa2","NG-xk1HfUnL","NG-xoaO3WCI","NG-xofMWLgK","NG-XpFk2Rzy","NG-xSQ0CQNz","NG-XuVFANWX","NG-y3ubGWLa","NG-y5KKX7G0","NG-ybnGh795","NG-yCsrxUR8","NG-YcsYrRwx","NG-YdDXrSDG","NG-YfqibnUE","NG-yH6tsH6v","NG-yhFNGvbr","NG-yIjcODVR","NG-ymCnxgfQ","NG-YOjA8u0L","NG-YpWyP7Q1","NG-YuBgw32R","NG-YuMg9Fyh","NG-yWIMc5PS","NG-YXa0HI8D","NG-YXD1q540","NG-YY4V2GwG","NG-Z4fXOHuN","NG-Z5f05oMf","NG-Z7EFGb9Z","NG-Z8weDzRc","NG-ZbsZW0kV","NG-zeW0SBMg","NG-ZhBhJYBe","NG-zhwcJMuv","NG-Zi73Aybm","NG-ZIt9nLqV","NG-ZkoYXZFd","NG-ZOeBApqu","NG-ZQijoy7L","NG-zS0Ty7on","NG-ZSjzOfjT","NG-ZWFsENub","NG-zX5LBw0W","NG-zYodEqhH","NG-zzLVeh72","NG-ZzYK0v0q","NG-0BfwBGY2","NG-0EzSGNJa","NG-0FoXuG45","NG-0p6woUhN","NG-1CDcP5lT","NG-1D69jPRW","NG-1HT0wbS9","NG-1TwZdMo3","NG-1TZcfFOo","NG-2eZlRklk","NG-2FblAM9k","NG-2Ta0w9x4","NG-2Vrme8LN","NG-2W8Xvfdr","NG-2wQLgm5T","NG-31Uzm1rg","NG-329GYaSe","NG-33sexyTd","NG-34XPmwQH","NG-38MB1mFa","NG-3d50YifB","NG-3DjT18EA","NG-3dnrxy9j","NG-3fTXwVj3","NG-3LCKGuhY","NG-3mPI9JrZ","NG-3wojVOA0","NG-4hhXxXJO","NG-4Nz2o7rF","NG-4WZi1ga8","NG-546V0YkL","NG-59VE3l5r","NG-5FPvm9Hr","NG-5LbxMMdi","NG-5M7jeyMq","NG-5tvx5288","NG-6fOoqqxU","NG-6ihmqfat","NG-6M1JgUkI","NG-6nc3Mak2","NG-75itMiHV","NG-77xXBPxF","NG-7aHgtyIn","NG-7CEq4JFt","NG-7PDJdIXz","NG-7SB6mFgJ","NG-7SkzB5Az","NG-7uGyqpbE","NG-7UqrJ1qx","NG-7YcPS1DW","NG-86lzKhak","NG-88HuZbLW","NG-88r5bZ1D","NG-8CEN2MNY","NG-8sgbOS9J","NG-8uybojBd","NG-91H01JHR","NG-954NYy2D","NG-9Cankn5G","NG-9KpCqVuk","NG-9KWe1hqy","NG-9LeofCkF","NG-9mO9hZUf","NG-9NmO6ZDt","NG-9sCQECV5","NG-9yhSv9eB","NG-a2a0wizV","NG-a5FuuHtc","NG-a5qtOwzs","NG-aACeIysB","NG-AELqmk0X","NG-afbqXsvq","NG-Ahv4NQGZ","NG-AJHLLdP3","NG-AoZg3eon","NG-athCPZvp","NG-AUkBaTns","NG-AvGq0WAT","NG-avmeKphg","NG-aWxoOdhj","NG-ayJhg7CE","NG-B2SjZQCT","NG-B7iZ9pVV","NG-b9MMg2FW","NG-bB9dhR6S","NG-BHeD5c7u","NG-bL2OkkDc","NG-bmAMZGje","NG-BMwNCjhY","NG-BOkhzWVX","NG-bp5yLMX8","NG-bVaYkX55","NG-bvb5DUbn","NG-BzbuBnuq","NG-c3ayp134","NG-cbKyOrvu","NG-CE4yjf7w","NG-cirIlmFs","NG-CLF1M1w9","NG-CnVAfQsK","NG-CSjVDjzr","NG-Ct5DkF0c","NG-cwcMUHGm","NG-CWnaksJQ","NG-Dgb4TLhe","NG-dGWWBLJq","NG-DJrEhNne","NG-dMXKruD8","NG-dN2BOWfH","NG-ds98jnro","NG-dSEsXuXD","NG-DtOkCkCN","NG-dUzkXRGX","NG-DXfgmbVU","NG-DYEFZ6l9","NG-DYii4Nl0","NG-e23v4ZIY","NG-e2JmKMbE","NG-E2qjDZJj","NG-E5CQXRdT","NG-E7oDyDo9","NG-EAN5oaMj","NG-EBOW1Fjv","NG-Edg8SV10","NG-EgkryNnS","NG-ekxdSqHc","NG-elx9p4R9","NG-EMrIjPqG","NG-evoFJVfu","NG-exVYK1Yb","NG-fA6jNT2t","NG-FAFUssQ2","NG-fCyVA7iN","NG-fDv8ncV0","NG-FfCmk1KY","NG-fGENQcNA","NG-FGwtPtyJ","NG-fHF8aGT3","NG-fiuENWS4","NG-FjFdZOaJ","NG-fpaztARO","NG-fqTQQr8r","NG-fswsFqWk","NG-ftlpDvRe","NG-fVmph0Wd","NG-fwmrNtaB","NG-g07qRWKC","NG-g6o6Cetb","NG-g9k5wA6p","NG-Gd6t36Xa","NG-GeWwesPt","NG-gftrDDxI","NG-gfZjGiBY","NG-ggaa9geb","NG-gHcaN5GV","NG-gkVIHufw","NG-gmhBI81W","NG-GNVXkiux","NG-GphU6eG4","NG-GPSWj7cO","NG-gQgk4DVO","NG-gqtXG8nw","NG-GTkRHCbQ","NG-h6zf7kSL","NG-hd9ZVcCN","NG-HfxoNdzK","NG-HlzreZDK","NG-HnpuINbG","NG-hocVzzdE","NG-HrP0xwVA","NG-htdsElJP","NG-htgegoCD","NG-HwDCAKrL","NG-HxSS4JyU","NG-hYqlgjWO","NG-I8L0Xa3k","NG-IAIsTVpA","NG-ibcqZ5sX","NG-iCuMpBGQ","NG-iJqHreXl","NG-iNZtpOuX","NG-it6hTsBY","NG-iWkP51Md","NG-JaaDCBdV","NG-JAp5eZkL","NG-JAzVN0B7","NG-JDCbKc1a","NG-JhCcVGSC","NG-jHkun15Y","NG-jJbJGOtg","NG-jNigwkXc","NG-jO6RMFVb","NG-jOMQtqCq","NG-jOrBQVEh","NG-JTMwipuy","NG-JTOXRi0i","NG-jxhuSSHB","NG-jy7Myerc","NG-jz665rm7","NG-JZ6QmMz4","NG-K0wqBa7y","NG-K6dcg3oh","NG-K9UzRZq0","NG-kC090wyt","NG-Kc6vDVrx","NG-kEL0rRLK","NG-kJYUNiC3","NG-Kl38KHpo","NG-kM3qVbIf","NG-KoOhlSiq","NG-KSuRCAkW","NG-KUq3rPG2","NG-KyxsJCMs","NG-l2AIjJ4d","NG-L8eEe9Og","NG-lA3fw71v","NG-LCl2nnp6","NG-LgPK1yST","NG-LGYXs0Ja","NG-LKaBGeV8","NG-lSGqpF8l","NG-lTEKDCZj","NG-LvZGOfVx","NG-m3x7h4hU","NG-m6LR2LCb","NG-MD5WPkCm","NG-MdMIhP04","NG-MDPavibo","NG-mDztW5fV","NG-MgY9CRO8","NG-MJhdecDQ","NG-mMTrK0vl","NG-Mmyiv2v2","NG-mO3PHCKt","NG-mQHMoe8n","NG-MTtnJ3d3","NG-MVfDZRw6","NG-mw3egpWA","NG-MWBKuICD","NG-mWS1x1YB","NG-N7nrhQgr","NG-NCM7faqJ","NG-Nk9ZGjj5","NG-NPYX1SjX","NG-nvxgz2BT","NG-nWI2rR12","NG-o0DaglKY","NG-oCNUN2eF","NG-ODWHv3x6","NG-of1XFJek","NG-OfnkaOGm","NG-OMU4hW9S","NG-oqDgdfNu","NG-OskmDJKf","NG-OwA3GRyg","NG-OzhVDY0B","NG-oZjHWgwM","NG-P3xd0JJz","NG-p5Bmlgac","NG-p9Lg6p6g","NG-pFLbzoJQ","NG-pGFZgOQK","NG-PhpJZBBh","NG-Pk5eX25b","NG-prehyIQ1","NG-PSmQopPK","NG-pvHFiuat","NG-pWleI47y","NG-PYNu3ajj","NG-pYZ8QV98","NG-Q8RcJVRN","NG-QEpPJTMY","NG-qfDdg6wY","NG-qjbrV4GJ","NG-qJMaNopZ","NG-ql2rm4Da","NG-qnWXWtU9","NG-QnXafLeW","NG-QojWMjBD","NG-qur34N1T","NG-qXjOunVG","NG-QYknOXhw","NG-r0d4fuI8","NG-r80mZsEH","NG-rbb3qd1O","NG-rBsVq6zQ","NG-RdJzjrMo","NG-RfCUP58K","NG-RFKr4EAJ","NG-rH1ly5W4","NG-rpG1VZmm","NG-RRSvZL4y","NG-RvJCGKBl","NG-RyqV5uwM","NG-S0sAt82B","NG-S3o5lEVa","NG-s8C2GYKa","NG-SAqhMRGB","NG-saX9Huzg","NG-sfRBsGso","NG-sGOSxNjq","NG-Sk8MS6NC","NG-SlGwy8tw","NG-SOMpePb2","NG-SQyTz3NK","NG-SRL6FR8j","NG-srxK0Oib","NG-SUZfZ3Ut","NG-SvFu18fV","NG-SVqfcY67","NG-SxQL86BB","NG-SZUO4Aym","NG-T0opyyaL","NG-t1qwqLTc","NG-TB55ka6B","NG-tBNnzd7F","NG-Tcinnxtm","NG-td2Ygl0U","NG-teOU8ta4","NG-thQsoynD","NG-TjrBpo6O","NG-TkZ3l5id","NG-tnoUfwbZ","NG-TRWqcyiX","NG-TXfJtXNo","NG-u52BNhDP","NG-U6TzHEEN","NG-u80Z0e8I","NG-uB1UZp4E","NG-Ufktzw4w","NG-UgqfCxFd","NG-uKhGcfkL","NG-umXjkPAP","NG-uOSIIs5p","NG-uP4Lt0X0","NG-urG6hvKB","NG-uRlForUw","NG-uSkik0G7","NG-uV13UkxV","NG-v1iyppEJ","NG-V1LrZSi4","NG-V2PaLHNZ","NG-V9DwQorB","NG-vg3xw2jp","NG-VLo0VzFj","NG-Von4QYE3","NG-VQscFn6w","NG-w0LpsUnQ","NG-w3MctYRb","NG-w3ZIHUkF","NG-w4MvYnV6","NG-W51f8nm3","NG-w5MmwTEI","NG-w6nIDVZb","NG-wDrS8rw7","NG-wDUFRtDt","NG-weL9K0ua","NG-weuQAY0L","NG-wI3sB2Pf","NG-wLKhnIxg","NG-wMe76iuG","NG-wpxwvGKM","NG-WYYjHQK0","NG-x1WTixJX","NG-X49yTbMm","NG-X7Fb3Odi","NG-XH3SLst4","NG-xkqUrvgK","NG-XLaqoCSa","NG-XOIBgdct","NG-xPNCvuTF","NG-xQMiGCD6","NG-xsMPphqg","NG-xvqtPwEe","NG-yChcHh9U","NG-YCq6yCB1","NG-YGwiMAQ0","NG-yhb7nBuf","NG-YhqxQoE5","NG-yj4F7QEK","NG-yJfN4PTl","NG-ymqKUvq0","NG-Yot8oviQ","NG-Yu9pMhDN","NG-yVC0sw1C","NG-yXgRtTbY","NG-z5Fu6MHH","NG-Z5LyAVU6","NG-Z9FmeyXf","NG-zakeKh3E","NG-ZcknZkM6","NG-ZDgT1lbr","NG-ZDgT1tbr","NG-Zip9nDwa","NG-zmHyy6hN","NG-zu42bf0l","NG-ZULAFgGF","NG-ZvBeDmw3","NG-ZvPb38Lf","NG-ZXYEQyC9","NG-xxxxxxxx","NG-yVmirXLP","NG-JNKzxtQN","NG-Rh7TIejQ","NG-5daUyE41","NG-j7MMlVkP","NG-md4nTL4e","NG-c8L2071G","NG-hiyyfJBR","NG-mRh0Nn5C","NG-2eV9rMtM","NG-SpZMgDmn","NG-onVB3TFi","NG-B0GR5BmT","NG-8tAfvaGK","NG-wc44hc6i","NG-cnQbPbAu","NG-mqEIas9S","NG-vAynaB0W","NG-Lz5aLoHt","NG-zBbWgRza","NG-nTN6lTy6","NG-wrv3Bdwe","NG-9lHLm2A0","NG-RGtouo65","NG-R76AeqyS","NG-OAlBLCpO","NG-rHb4lvDf","NG-aniG38SX","NG-4wt0rl23","NG-6cjbEEDN","NG-GPDIx3xw","NG-NeQBTbuR","NG-KMdW2AAi","NG-bIDLg1jj","NG-utPiCaLg","NG-HKZgyItU","NG-TbFHkx10","NG-rhdlC7OQ","NG-JOgN3GQq","NG-oCFbBEha","NG-qoCVakKB","NG-qzxerTJ8","NG-Zu3iwCSE","NG-hkRTivZh","NG-arEZKPEs","NG-efooZ9Wy","NG-pkue2hAu","NG-1aQgzLxF","NG-J3kXUODq","NG-J9I2fuE9","NG-rxbceE4F","NG-5JOaqpaW","NG-P9ytqv0Y","NG-U8A6SSCR","NG-hnoWJDhS","NG-jSIIiNEG","NG-pDaxa03a","NG-nJe1ARgE","NG-G1rnm7EN","NG-u8r9R3mU","NG-yvAj4hjq","NG-fTVL9U78","NG-VUZO36OC","NG-1ywDl9PK","NG-fsUTAbHC","NG-t6eANsJq","NG-f1pgDoUM","NG-J9Fjev6p","NG-9FvWgzIp","NG-fRlsBSGM","NG-5L90uTdM","NG-elXtgpq7","NG-oqaDgd6I","NG-TRG0N2Zu","NG-A2MFHUVa","NG-KLg2Yjhh","NG-xkU4Ftup","NG-l6sckL2D","NG-AYkIveS9","NG-SPK2rxAG","NG-zGQ94xpi","NG-BIn0PWwV","NG-SLAVi9kB","NG-YVmwkR8Y","NG-C8lVDpjB","NG-sx9sUvWA","NG-S46rKsDm","NG-2Whlhc9u","NG-uEfjAeii","NG-YkIVJ4BM","NG-8YU4NTaU","NG-ofWZTB7P","NG-gsI5RAqI","NG-1GHJtcUD","NG-7KV5AnmN","NG-DtYyLGwp","NG-b71bYMJU","NG-DlehCizs","NG-VcGaUe8V","NG-wJhm2yBV","NG-gfKZTpKE","NG-CleH7w0y","NG-Wjv9Rt8u","NG-FeFgfdUg","NG-OyPfK9xs","NG-pchDDhdg","NG-gvLowpSH","NG-GRLK0gdo","NG-ZSoRitoY","NG-muc3hbgE","NG-vEOumKpL","NG-6lnT985Y","NG-vY4CBn5m","NG-BtIFkNCx","NG-8Zx01Tqt","NG-krxUbLaV","NG-DKqFTmLc","NG-VPdVjHiJ","NG-A3THuopB","NG-x1FiQrnv","NG-eHayQnsg","NG-eZMPuEGM","NG-YEhrgfyZ","NG-Rszq637n","NG-WmKSpXr3","NG-kK0NnVgr","NG-gPQMYQgC","NG-pLnVVFHD","NG-3BPDLvbH","NG-wb34ZQLs","NG-Rc7whJKc","NG-Xrm477yJ","NG-wEeLmpmE","NG-zW5U4Ma9","NG-vsgv2XAn","NG-6kzbhoY1","NG-OFG4Ktw5","NG-eZ01HB4W","NG-GdNwNrKp","NG-CEHfTPvS","NG-yETdbw38","NG-zomjO39b","NG-cHN5lNzy","NG-mTmfCXRJ","NG-yRMOV3W4","NG-Kk46FZgN","NG-37CkOPg1","NG-DH94leyn","NG-VNQ1wx8I","NG-5LHgaiC8","NG-AM6ePvAY","NG-A9jl9yDo","NG-y46w7bCK","NG-IrbtWp89","NG-eqzZ1wqO","NG-97zlI0Nj","NG-ATRH6J4r","NG-rnw3ue2x","NG-CdKmk1L9","NG-j9woRWxH","NG-6qxOCvI1","NG-n5vGyoMQ","NG-xnjG9l85","NG-XCxaDUhu","NG-MJ9qi8Up","NG-IoxZMK1a","NG-iGT8bEfu","NG-Q7dfNLiA","NG-fuJg94Tc","NG-PoaJm3WU","NG-2S4zmjp7","NG-AtRdhH0l","NG-U0xSAfvc","NG-xct7HZRc","NG-qTBPpXPL","NG-vK1lCzc2","NG-6Ms0KYEU","NG-1balB11j","NG-KJJhhacc","NG-Bdm1BZ0P","NG-0tRVZvyf","NG-vsWJemte","NG-nKhNU4la","NG-uSKD7aB7","NG-SvDOdxvd","NG-zWPj4rzu","NG-7rSQ6qSS","NG-H274SFLB","NG-YwLViqzN","NG-bCOt1QyX","NG-bfPrSYQj","NG-N4OGYFLA","NG-20psrwbp","NG-wdYJrY43","NG-0tHv3FL1","NG-durD0dSr","NG-A6iNjQy9","NG-b1SEgm1g","NG-bZAQHleN","NG-yktLicqP","NG-lLfUPFcy","NG-NihWlxao","NG-8E2zR2Ck","NG-nKhNU4Ia","NG-1zitfE0Q","NG-xu7jx007","NG-tAfRSk36","NG-Lo5LFpI0","NG-xAcqwW8Q","NG-q6YMqLDc","NG-XIqLKFcz","NG-qgPKqkta","NG-2u0nSbBD","NG-GZFlPdHy","NG-QVSVKfwP","NG-GZBig5oK","NG-CRGE7sH1","NG-0HRxgIfb","NG-uiJu288i","NG-UcRqRypJ","NG-29ajd1Pa","NG-kCmBSJeR","NG-wUwgR9h7","NG-FA6HlNO6","NG-LqhQRVJ9","NG-ezjEJRj6","NG-zjcMd3vg","NG-Ga2GSvOP","NG-4uG6hHGJ","NG-0fmGsNl1","NG-NKDpR3la","NG-jnl35EXG","NG-MIFxg6C7","NG-h6AFOEj5","NG-EVvuuAc7","NG-HcTCmpZr","NG-1ZptIa5r","NG-SAgqAUDx","NG-IEbpX54b","NG-DlJ8yNTr","NG-xE1NnCY5","NG-jtIBe5E0","NG-GJYSgS3l","NG-nEescROA","NG-f8q4SJIZ","NG-E5nYFDQM","NG-jaYwMmnM","NG-5H6wk8in","NG-MCaV23H0","NG-WnHlaVn4","NG-4WyURGmt","NG-Fd8a6xm9","NG-hqbbcC5L","NG-k5Z7YMpb","NG-LTDGRtag","NG-ILGWPLVG","NG-uixNAWhk","NG-v68gNwAI","NG-6bRrjc7l","NG-wkWsp97R","NG-L7epvcic","NG-fxlyCyn3","NG-XgjD2B0J","NG-A2UoQbW5","NG-ODY2749W","NG-rBKlGpLd","NG-8Px9SkMI","NG-7H7k3T92","NG-GAGih0yu","NG-K3KdrjGA","NG-mlmX9xzP","NG-AZKtpj7U","NG-hQ0AKfL8","NG-BwMydSqg","NG-FWaXq0QM","NG-v1Puruix","NG-o7aMts6r","NG-t2suJw4M","NG-b1c9IoKj","NG-4Y3XJ2Xw","NG-ZnvjlcHT","NG-AcLkTaEb","NG-xKLb7otb","NG-kQTHWX6D","NG-sc8R6vIa","NG-osyFboGm","NG-G6AowjH5","NG-d1VfZs9b","NG-9dm8casF","NG-YkpfBFNp","NG-85deZi8p","NG-mNFNSafB","NG-cErry9si","NG-laU3xTUc","NG-0r3e3WVu","NG-6CniSvei","NG-B7t42jAe","NG-lm92OeSQ","NG-HPDgyNDb","NG-ihwvBpB9","NG-40SFpAbb","NG-Df7jihRW","NG-0iJfhmtB","NG-6bgxEPxV","NG-t5PXz9rL","NG-EwhhnB5k","NG-g29imXg1","NG-8nBDx1B8","NG-jnXQ02Ld","NG-0csYgeVd","NG-AHbu2k3V","NG-vitCgXVf","NG-ONfVL20K","NG-8RyAwNWd","NG-ncLv1MhF","NG-nZg8wR7l","NG-zCYjETwS","NG-hleFDfJX","NG-rwlJiezG","NG-3ZAtnI6u","NG-gLPKW17B","NG-YqOoO1nM","NG-50n9dliu","NG-KZrXg9Ry","NG-Kc2NM2mS","NG-Cm7GhiVe","NG-QXt1zAeY","NG-OJko9vaN","NG-jYuknhxd","NG-sr7h0QSQ","NG-74afo7LH","NG-UuwlXBFB","NG-yhUvLQg4","NG-uP0iBzmt","NG-D0IHUNW9","NG-NaKUW35O","NG-OvZOzIUc","NG-FM1R6ya9","NG-hOasOHKh","NG-VjtNTwnH","NG-JcvP2ptN","NG-onKG0bPa","NG-y04i0BKi","NG-n4TaD908","NG-9BC0yGZg","NG-kgFKfx8A","NG-akCeKeJe","NG-mSEsL5ke","NG-VDDDdOBk","NG-zV85naaY","NG-YOIxFBi6","NG-cFEBQaT7","NG-nSVN4h45","NG-wDxY1nbQ","NG-CQVhyE3m","NG-rl1rWb6O","NG-UVT22yty","NG-onBu3zLz","NG-sRYUdOaX","NG-HWBHInou","NG-p8KUjjQc","NG-d4ruPvE6","NG-2ug8weFz","NG-QxP8Nmq8","NG-TiJp4OUn","NG-pjVRhIzE","NG-khqx59Oj","NG-mTYBzdyc","NG-Lt9uqOvi","NG-qXK8BsvJ","NG-ZLY3QuW2","NG-Oh2qw3fO","NG-E0vspyPT","NG-A2QFkBc0","NG-buH9fsAz","NG-ey35fmSp","NG-uN7ER5Gd","NG-1ewqcfhp","NG-bnjP0jLo","NG-sQpiukWY","NG-B8F4fNN4","NG-UwnxohpL","NG-byow5Zc4","NG-2knHjq4N","NG-hmLb2OjF","NG-FkMPYwmJ","NG-Vhpj3kUS","NG-ttjcBEit","NG-EQRR8vSl","NG-xWYBerxo","NG-fTWAJxoB","NG-TVIiKurD","NG-isgMqeyQ","NG-Y6YAfigJ","NG-EP2hm6uL","NG-ga3gjjwl","NG-Kd4YQOjx","NG-sniuZcXF","NG-t2EF0n5c","NG-Ze62ixQs","NG-pDS5W97Y","NG-IRGd4Zyt","NG-0WnMKPZH","NG-YFDvA9w0","NG-EfpcUVNS","NG-zs03gyCo","NG-FJ9ycbSY","NG-L5TNELPZ","NG-NlyUGuft","NG-LIHQRNzC","NG-IDRqV6GV","NG-3J6R9ZvG","NG-NbbweWbV","NG-Jstn3rda","NG-oX6Preyc","NG-qjEZv1Wg","NG-3lRwsoJB","NG-p5YOPlpv","NG-baKmGODN","NG-gzXQkmT5","NG-BEJdKjnB","NG-dQxS9mki","NG-c42saYIC","NG-Hui3xT5U","NG-od4EZBT8","NG-2yrGh9Fj","NG-al7G7V0F","NG-SfwhxRuQ","NG-MbJbXeY7","NG-X9c7gwEi","NG-zeUvQVth","NG-4AqMPRfL","NG-C0CLkLsu","NG-wtjVrfQh","NG-43Qa05vF","NG-HEu3Ernn","NG-F0BqL9ec","NG-A20RIGwZ","NG-dgjIZc2g","NG-tYSUPjMO","NG-3QKjYrVE","NG-CarfY8HT","NG-tuftyWdU","NG-QasuEBNT","NG-U6IvWe2E","NG-GghTG5oy","NG-pg9lLARu","NG-1HhfbF1e","NG-IXj14KYi","NG-Y8ziglPX","NG-nXaqIpeJ","NG-XsIG2fhu","NG-at8naRmM","NG-Bzg1fN24","NG-mUTq8uWl","NG-F7WRab3d","NG-CMlhpmuZ","NG-o3rR0eHW","NG-5G9ZlmSH","NG-C9ZzPXee","NG-20QEAtym","NG-OgOi7qfa","NG-QagIooQp","NG-De8dpNq4","NG-5cCxq8KK","NG-oTfR3m55","NG-vuRCqkko","NG-m2dQinmZ","NG-7CuHOdZf","NG-aqGheGZo","NG-v5fheo5l","NG-FSmschay","NG-kcacQNFA","NG-L1jDEEVg","NG-4DuIPTro","NG-z3x3Gyws","NG-I6bYdJkO","NG-qdQT8aYF","NG-knJObo9D","NG-Y86n6wDH","NG-aQUH8yox","NG-rB8fZP3f","NG-HzfZBkWz","NG-gELiBHUU","NG-Z3otbmEW","NG-cMd55HTu","NG-YmFCNzWk","NG-QK9tdRAH","NG-D2qh3Yqk","NG-eZbusxRu","NG-GbCRYvtJ","NG-3NnjONTF","NG-NBojEXTp","NG-GlxI1Vdr","NG-BQ1qaYEp","NG-LtKb5ZC5","NG-AYuBvOAf","NG-YvtTiEqB","NG-oHdaVVSq","NG-4VOWqekW","NG-TlmIQ69W","NG-9WJf8XSY","NG-8Bd3KhsM","NG-ssbZaViD","NG-nwANJhtp","NG-TVnQbE0u","NG-eOYVLtZS","NG-K5l6Tlog","NG-Azd3UHCr","NG-ywlTmUkN","NG-Wtb2k39x","NG-MCLtdfMK","NG-XxjTJ7vp","NG-rN7K7BBN","NG-SmVj9Mmj","NG-WUE5fJkr","NG-tM8dpr4s","NG-inFVxVWt","NG-GVnaDXud","NG-z3rAiGN1","NG-3oojasUk","NG-gyoJjYQl","NG-dT3Nrtsd","NG-qjtdsI92","NG-YAIBw0rG","NG-Nyi8F5Zp","NG-v53E6JZG","NG-hYQ55y2H","NG-tVhBYgKd","NG-ZLGDfZtN","NG-W1ervAQH","NG-TFSbw0ES","NG-h5NzVj6K","NG-XURSwdGi","NG-eZscN5vN","NG-954NYYzD","NG-LgLyN2hd","NG-HTRihHGy","NG-VcRIZGxa","NG-o1aXcDCl","NG-ybAURos4","NG-J5EzWng0","NG-1M7EtFH7","NG-pi3WWgMJ","NG-0jcNYQI5","NG-UQYtna8A","NG-MPy0tGSL","NG-F8oJDOEJ","NG-nKi1u5af","NG-ZiID7yON","NG-EnNtSMwF","NG-Dsw3Hnho","NG-rI7LbLKx","NG-SEwcCc0A","NG-x68OBiU9","NG-GHVOPob9","NG-dIA9uHnO","NG-rkkhLIw5","NG-alFMiFOS","NG-HRSwsqyn","NG-3f1aY1zV","NG-aWPNEVqn","NG-wcKuAOJp","NG-NvFDSJT7","NG-bYdyecPc","NG-eGT91BIN","NG-tseZJKKC","NG-I2hTE7Mh","NG-M0BObxlW","NG-k39Rhsw9","NG-1A9XHuee","NG-iIN9Ph8Q","NG-NYmpr1gw","NG-sIMxS19l","NG-iJ4KIy8q","NG-pMl9MT76","NG-QFAN3GAq","NG-135EHz7W","NG-HVluuh0l","NG-lP7ZdHlo","NG-S3dgm819","NG-6D6S2pDD","NG-W4pnjrOV","NG-CdIkLQm7","NG-QaYdgmlc","NG-M5H2gNht","NG-MjQhED7A","NG-TSJxJeas","NG-0IBbNwuj","NG-5svPbouk","NG-0xNWrn1G","NG-KOBV0tVC","NG-3b0W0KMz","NG-peTtpT1P","NG-6HGAHgJD","NG-0siQpsiN","NG-oyXsN0kU","NG-nUhjYFSu","NG-45UxBbgj","NG-m4Gzzb31","NG-G0cI7tIT","NG-D06qezHw","NG-IAIIRh9f","NG-TFVQTP77","NG-Kivh78p8","NG-3kIzNKEg","NG-YTCYMQCV","NG-Nwck7XT9","NG-EzKWKTMF","NG-nUWY2JLY","NG-CyzXh7BO","NG-NiNocViN","NG-8pZT3fOB","NG-H6qGgUo8","NG-M6DSTmCA","NG-pt7BhwkT","NG-cc4FFYXD","NG-F6tdRxnh","NG-P0v7ikh3","NG-5A5Rk7Xh","NG-BKUuRq2i","NG-K9jfweQ1","NG-wWZfroxn","NG-5mr3UvIt","NG-TbAAAEym","NG-BtI8BYN0","NG-EKYNfvjy","NG-L5blqaXq","NG-eeZRzMHs","NG-RB82XFml","NG-ddW0LHtY","NG-aJM2n0ma","NG-9cQu3DLs","NG-sTmcV66U","NG-0emkScAh","NG-8agmqgIC","NG-lBSNYRwN","NG-aaJO9wan","NG-6vsEPVrP","NG-TAxls8Ch","NG-dbEqZsXo","NG-jQb2BAvc","NG-RrtnNomK","NG-SSPAcPei","NG-SBfzuaP0","NG-yvnkR8o2","NG-s00Ejt80","NG-4dhqRSgO","NG-GLWIFLSz","NG-GR9E6gJ1","NG-JbCtuCvo","NG-qyUsXjEj","NG-XhCHZzsn","NG-xTJNTd8x","NG-RhQSohBf","NG-RGh1CZvH","NG-E7V36MKa","NG-qbzKXl9g","NG-yoez7K10","NG-wHP7eRV7","NG-YawLt7So","NG-Plri48tz","NG-tSgMc6qW","NG-uDoHipx6","NG-QvK5kTte","NG-T9vUQm8f","NG-BMXn2CTk","NG-4wEEtmN2","NG-j5BYM7ds","NG-nHxyqM63","NG-EUpxOOzu","NG-fl0kBW69","NG-ySbbvy6T","NG-LICpIwEO","NG-vYhAZItG","NG-Bh3tniH9","NG-I2U0Djmq","NG-SN9nGTiA","NG-jlEhzeA9","NG-OdrJu050","NG-tSY1E7vM","NG-mN9PamnK","NG-Cje7swaL","NG-o2VFF8Iq","NG-iboz6rAY","NG-nEXkbEhv","NG-tzdONdYW","NG-9nNwWdkA","NG-tjwtb9Hg","NG-VvU1ejmX","NG-FQv2MBQ0","NG-nAZVhMxP","NG-byLLwmWu","NG-pyiLeMYY","NG-5P16jxpN","NG-K9V9WKHb","NG-miucAWVb","NG-7PrMJ0JH","NG-JsCDYcMb","NG-Yg2dWpge","NG-TsxEmLak","NG-UE6oAy25","NG-npRiMU3o","NG-qpsxDcu1","NG-k8OxwA0Y","NG-dzrd7wf6","NG-fhHrNdAd","NG-l3ZBBBGn","NG-R9R3JCkf","NG-1t4zaD6V","NG-lvgJVri1","NG-cUu9MZ4J","NG-2BvCtcIA","NG-ENKox1rs","NG-Uvw0RUBu","NG-rVNGfzI7","NG-m1EFnaIv","NG-F25BAHEd","NG-euUOfzsL","NG-vVJvzD1d","NG-YZ1pPoB6","NG-NGqj5mmT","NG-LkMm2hVK","NG-Z94VK2t7","NG-QRkVG2JR","NG-TguMzdVz","NG-Y3fqvAWe","NG-GhH9jCBe","NG-liooz7ht","NG-n52F4k9J","NG-kdI4sNe4","NG-wnA23gRX","NG-3TphQfPn","NG-BGjGfZzV","NG-mvraiL1k","NG-ewnulfVo","NG-c8mw86Qx","NG-JoAG5CJq","NG-1l5HfVlB","NG-bGbfsy7X","NG-fxGVtSSA","NG-OKxbOCzw","NG-rzxPbRLv","NG-GrgYd8YW","NG-vr13nuMJ","NG-WfsQcKkL","NG-YBJflrfN","NG-TeBfCGZI","NG-cna37mVS","NG-4L162hmb","NG-loIwPSvE","NG-fnAOApcK","NG-HWojKrbm","NG-iB82f2vy","NG-Q3xD4RYX","NG-svhWGVrD","NG-XVcLfKLG","NG-IuT4OXVz","NG-kBCzljTl","NG-IUESp3qd","NG-aB00YtOF","NG-MBdKUAy6","NG-L9ZrpMFS","NG-Ip0kFyea","NG-OnmCUghq","NG-BshaeeiL","NG-txqSzB53","NG-XZWFYonr","NG-9WZC2lQF","NG-Mp0lJOVx","NG-KjIqSIvA","NG-e5JbsCEq","NG-Q2ORLkS6","NG-7ukZzNsm","NG-Ha5Tw2EP","NG-Qjb0jtoz","NG-U7szWr1e","NG-fW98C2YH","NG-LPL0wsEb","NG-wDjJKVos","NG-deeR2KEZ","NG-u03C5YLY","NG-WyQ6mQlW","NG-xTmazsoT","NG-mILfvFdW","NG-hh1hZuVj","NG-1KAzAs4D","NG-b1miredS","NG-qdaHsXNK","NG-vUzi9Tb8","NG-0uu0dYKm","NG-02KevfEo","NG-pwi3MkQR","NG-jvoaa7c9","NG-4AoJ8dFe","NG-8I3VoK7i","NG-3ODbo9KR","NG-D4dE5KvR","NG-aj7XkIUu","NG-yI7OjF1K","NG-j4wNKEyw","NG-knmn3k5j","NG-PqBsUpZV","NG-s6WoQlzk","NG-OBd1MeFm","NG-PSSbtcxP","NG-GZQDrZKt","NG-KhawZb6U","NG-LLPrkFuV","NG-3SZ3biwH","NG-8nCMYvv3","NG-4INeFcHe","NG-JqOcwmQf","NG-9TlR17HB","NG-0ognhth0","NG-XFWfeoUp","NG-zwPAVbWJ","NG-WdNS8Wjv","NG-NIfUdBHT","NG-bBRjWjc3","NG-wP8wx0a9","NG-0Z3jhyvg","NG-Drd56irB","NG-POHrTRQ0","NG-uu1F7gDC","NG-tip954lx","NG-78mK7u0l","NG-COkebHFy","NG-YeKhAQZu","NG-SO08TfEK","NG-tboO68fq","NG-h0ima4f3","NG-x6B3z6sa","NG-UB3YIF1R","NG-bEV7Rch9","NG-wCs52T55","NG-IGRgkCmG","NG-1Gi2z4p4","NG-VMM3i7uG","NG-kRVmcAvS","NG-MKKb8tWU","NG-aAscH3yz","NG-hkyQ2Lva","NG-yId92f1j","NG-EeY4UVDu","NG-8YXMXtMD","NG-2tsmDsZo","NG-eq1ZYD3W","NG-JEU4Pvmp","NG-RzBMloQk","NG-igFHSoI7","NG-3bTPlbAP","NG-XPfGP8gy","NG-HR6iXQFs","NG-l6AO4ieo","NG-5UzHitVr","NG-2MZwHXY7","NG-19bCCPJ7","NG-Yud8QYba","NG-7NRimWnt","NG-MCOHaRse","NG-AIXYVIub","NG-wZ9miNmY","NG-EP7XMfA4","NG-ee8jkAiY","NG-MgT0AYW8","NG-HmWpfyQb","NG-NaYUpD83","NG-yBxL77IB","NG-ftV0B2W1","NG-VU5CIuoD","NG-V9tkDRR3","NG-UI7MPJyK","NG-nhigw0Ou","NG-cpPZg6FT","NG-xFXdSC1C","NG-vsijIkS4","NG-0uS2QVEP","NG-58adW1mq","NG-Ppy02oVp","NG-vsB2IwMQ","NG-FUUW4ifM","NG-pi3L3i5I","NG-UErYrx7Z","NG-Fozw8UpM","NG-dcVRhrnA","NG-uLOsYj8w","NG-mrhHUXGs","NG-Mwr1gwMK","NG-hGl8DKyc","NG-WIHDb2Bi","NG-qXvjgaU3","NG-Su99rHa5","NG-THa9WkuC","NG-1ftYSdNm","NG-8M0M5zps","NG-08rpnQP0","NG-yzFsupFZ","NG-nVSK3s1k","NG-3WXjrXYE","NG-MH5MpfYs","NG-7I5W6Osu","NG-YUV98IV9","NG-FKrkHwMK","NG-bNIAratn","NG-blJ9AXdO","NG-DTIgIuEW","NG-LUFwP8O5","NG-JrQCWNfQ","NG-ejLpNu39","NG-oUB6Vjeg","NG-Q98AKm66","NG-d3bbAltd","NG-oC7SHbc5","NG-80D8KzhI","NG-Vgpb6s5W","NG-2whCh4M3","NG-BNUMe1nx","NG-KulmrGjb","NG-gRLDpBLI","NG-gpv0lns6","NG-uCm9vwrb","NG-GbJDnuNH","NG-uB6LwL5k","NG-iNzqtcq6","NG-03UsBAzg","NG-IUjXQ1cI","NG-21MyuV89","NG-cKstNQkf","NG-zGzdy2Ni","NG-3DKFy0Sh","NG-SJxmcW6d","NG-H61CQKJd","NG-2DYXKWOq","NG-3o3k1XII","NG-lDg66nxG","NG-LSMemYj7","NG-D4Cua8ex","NG-XfQWLoEZ","NG-0e5le8sh","NG-Tgli7IEI","NG-EEbRd2Xx","NG-wU2MOU96","NG-ZJSH2sDa","NG-URf2qRzA","NG-bawza03g","NG-bGDF4Zu2","NG-sSCOXbZe","NG-CJwHFYev","NG-AsLuwHd2","NG-K4i5OXUx","NG-FHRWUXL4","NG-cCeJV0N9","NG-HVtkztC9","NG-jbvwsdNP","NG-ba2g8L4m","NG-S3AVPC3j","NG-1fjiymwN","NG-Ryw1hTXG","NG-CZSMoykQ","NG-85cbn9Px","NG-7zfB91dL","NG-76alIs8p","NG-CkfKmtF6","NG-zigrQhGG","NG-HRqJi46E","NG-YVfSbzym","NG-pdCQamzH","NG-u4NoNZgA","NG-Idzhm14y","NG-DfCvSLTe","NG-0F5YHqRY","NG-Gu1Ki5TC","NG-k9VLEKNF","NG-1xRWIGSf","NG-0yNqLl1V","NG-DkhB3w9O","NG-1cIaWOzp","NG-phwmGeO3","NG-M1vKWVjJ","NG-UI09Glq5","NG-rcG1mU3R","NG-O08yNOPo","NG-VnsW8TLx","NG-y8aFiNPR","NG-LQ5HT4Vi","NG-Gh2k4da0","NG-503gmE0u","NG-LigeRuam","NG-n7PRgF16","NG-mfrkHSzj","NG-Omz5DNzo","NG-l6emTpaw","NG-cAyhwkIA","NG-6odfjqCF","NG-53PJl8Pi","NG-XaP9ybvn","NG-0surcO2j","NG-HSnqtnAv","NG-zNj9eYhJ","NG-jItYvErN","NG-eqFtd0nV","NG-MiAOUVmC","NG-vjBzp7J9","NG-AnwCqTIb","NG-M6AmPn2w","NG-1h7cDSxo","NG-HiGcJU7D","NG-lHNnUGdN","NG-oJKJjetQ","NG-6VOzWOTW","NG-3arW28XI","NG-QZPyj1cf","NG-8aHaQSTL","NG-QeheNYZe","NG-0dwpHylm","NG-yIBDYfoE","NG-BjKZRZY8","NG-OT4pxac7","NG-Qlwm7bnI","NG-bweNBEYr","NG-gXOkIPAS","NG-3esFSPGN","NG-ynGMHDLj","NG-Zaq4ZQom","NG-DA6HsPZC","NG-nHqCjttg","NG-0jsMMiBq","NG-etp1plnX","NG-Hpt0ySV9","NG-dcT0DvMe","NG-kj14Zwou","NG-RmcwG6G3","NG-c4BXalO5","NG-geAYSpP4","NG-iH8bx5Ph","NG-WiyYlAt7","NG-s55NbF3J","NG-jdZ0yzMn","NG-OZrbK0IK","NG-9HuBhQtm","NG-rHFz6upC","NG-VcCH6ZNg","NG-2B3B0YLr","NG-JAjOYwgV","NG-YZN21WRG","NG-XbsKjQBR","NG-Wf906Qgh","NG-zh9MEQMO","NG-9bSHumyW","NG-9u6PFk2F","NG-jsfLyJs1","NG-115H7nwY","NG-Vg1TAKSL","NG-tjBRQ61n","NG-sWwbLXXf","NG-8S3C6SmE","NG-HNrQGVVW","NG-wRKjhBqy","NG-UE0qqhYD","NG-UujfSpbK","NG-n4jBnIMe","NG-j02UMMjE","NG-8ZjkeWdI","NG-MINLhNHK","NG-bZNvomD8","NG-7M0TDjOT","NG-EWzTfbX1","NG-jkO5WNgO","NG-vhgWpE0v","NG-EPuX4yup","NG-NSIAZtZj","NG-oykahE43","NG-eybbNmeh","NG-yn4gaZ7R","NG-IVGkfTkN","NG-GeCqZXCo","NG-B6IHfH2L","NG-NR4Tb6r3","NG-rRiuj42d","NG-5aD5Fhe4","NG-NSX3Dt8e","NG-aT5hoRpU","NG-Wh4XGwao","NG-V99Qau3V","NG-Ix42LwIv","NG-1Tsf1ol7","NG-BSbhaXYo","NG-YTHLqEYQ","NG-2D7GNi4Z","NG-OafcXJ21","NG-4IEbfUXC","NG-mrq9faF8","NG-4KoclSGs","NG-afjsU6g6","NG-06eWjfCc","NG-866HK3qS","NG-Jv3BZD5q","NG-4YOascEQ","NG-fLKphhBf","NG-0kjhBz7O","NG-T8XHULbm","NG-AbYMQAFw","NG-dKWapGqP","NG-1SdvokoC","NG-FnAmYydt","NG-A21LBk1o","NG-rVGPYYiK","NG-Ar4mdUtQ","NG-kHDdcbPt","NG-QPzNZ5wf","NG-Qw9V12Wg","NG-ggxE032Q","NG-jm1CAeen","NG-ScIWd65M","NG-bYXt75OD","NG-xMWsvnjV","NG-2QE6pqkD","NG-G3yKJYqC","NG-h9IGzDQP","NG-IRIvn3BE","NG-lxig9mEJ","NG-SYUo3bBV","NG-LGy3NnLR","NG-8A3sEETg","NG-iP38QIIy","NG-tqkkxzME","NG-WGUq8ve9","NG-o2v64CDF","NG-RBtGFk2m","NG-atcZT5Q4","NG-LuI54mPo","NG-5BYvnHPA","NG-s1Dzpm9k","NG-Sxw2Zidi","NG-mUxoNxt1","NG-tkZ8njZp","NG-MBIK7o62","NG-22LrfBj3","NG-ORoDd6se","NG-81dJJToq","NG-fRpAokKL","NG-8gCLYXJj","NG-c1Acn7PA","NG-fRhaVaeB","NG-64wCIYG1","NG-FEHgXnHb","NG-u0Pf0Nfj","NG-HXOcZKVr","NG-62CCYiJM","NG-K8he6foo","NG-DHZf7GGh","NG-HJ0te7pi","NG-Ya01QQL7","NG-fxKOrGuD","NG-S7WLfeBa","NG-F2A36esg","NG-9Lb4aGvT","NG-Beop4GWO","NG-o2AaMC07","NG-PzWGpRsd","NG-cwou3ZgE","NG-KnRSE4wV","NG-accYClli","NG-IY14oXHx","NG-0XR0IuNa","NG-4f0RD1rr","NG-bsFB8RIi","NG-bqbbdqQW","NG-Bnc6wrLx","NG-Jsw7BCN1","NG-IKeUrRQV","NG-D7PSICKG","NG-DnpZhxuR","NG-wAJsEL2R","NG-gGTaciAR","NG-iwBa91ma","NG-pw77j1hG","NG-l6vZSDzg","NG-PhKshTTd","NG-ggZ51FND","NG-XeyNiknF","NG-4riWEoIu","NG-b4Fvy34F","NG-VyCBIX5u","NG-xW16Hdam","NG-wOJ9gy02","NG-5eJIRUdj","NG-s8Aauplk","NG-awF4oA5q","NG-COJm0gVX","NG-yvSn46Va","NG-xXScSbXG","NG-cnS181kn","NG-RjJWttxv","NG-TDo4XeiF","NG-igVSvJzR","NG-KvosuoAo","NG-oMpPc6f1","NG-aYOseHBI","NG-rnVZoJov","NG-tWSMAGnt","NG-gMiL476d","NG-ERYleSAE","NG-iCdZhalr","NG-KpSoR34p","NG-XYREMrTa","NG-Kd0zrg7K","NG-fHFhA0CL","NG-YIy6N4VZ","NG-xvMOAksI","NG-uo9jPpBY","NG-xl83qEOu","NG-9jvpWyB4","NG-JCEO2ba9","NG-UPp9O3AZ","NG-SeXc2O9I","NG-eyaDLWKO","NG-luwrutEd","NG-EEU4I6Cd","NG-q13Rzdi4","NG-757bvLf7","NG-d3RXHCFb","NG-gsl5RAql","NG-nUtmqEXN","NG-qqvUH7pT","NG-9BWnPCBf","NG-eZXO7cs6","NG-0e7w6m7m","NG-LXFWxIRB","NG-SbjQnhqO","NG-ZrHpignW","NG-sVnmwmJ4","NG-DvB30KPc","NG-Wafm84m2","NG-ng09pl7y","NG-LLwICkli","NG-qR6HokLR","NG-GzsYW4ic","NG-2ndaW2Wo","NG-h5kBapPE","NG-ePUeoneT","NG-y6FJ6wru","NG-ABnw6hjr","NG-zGmzAn3l","NG-YOsjquW3","NG-M8xRcGtV","NG-UQFMEleA","NG-SCyBCU9q","NG-8Gp9skPL","NG-OkihyHp6","NG-71pt811v","NG-AAzzCa6p","NG-SRA3SotF","NG-MhGA28zW","NG-PeDViZbu","NG-6KVXrgw3","NG-mrCevPAi","NG-7Ngv1tEl","NG-nKn56d1Q","NG-iUjRN0cE","NG-M1lAWmou","NG-6yiveE6E","NG-8FAiymKz","NG-WA9vQR4h","NG-KoMEp05m","NG-n4CUjlgq","NG-h3sqyj3D","NG-94f0B5Je","NG-69KQ6i9s","NG-wZAZ3FFa","NG-juau8bl2","NG-pxjDbTqq","NG-TJICJdcS","NG-gZ5sGGcr","NG-qjk0uHWP","NG-C6MRvwOq","NG-zv3Axrg7","NG-Cu9TdIDq","NG-teyB8QGx","NG-V117ApJu","NG-Vd44H6RA","NG-Kq0jkp7Y","NG-t9uNbcbV","NG-jjpNtkUZ","NG-FESJW6Mr","NG-6ShoOQDG","NG-3NhqPYyb","NG-cYBprJY6","NG-xxCZmZNH","NG-3Bhw7XnO","NG-sWZxZ9pq","NG-IgH0hO2f","NG-5NHGNVd6","NG-l6n38KJn","NG-Lqw210nI","NG-Jcpf809m","NG-yRNvvgAp","NG-b2P5UUom","NG-OY2QvsF8","NG-5WuKDYbW","NG-BumdL4CM","NG-B2hDjXAB","NG-2P8rKM8K","NG-ASL6JBsj","NG-YuM54juA","NG-nxttXB6x","NG-uVV5Zpyv","NG-VM8shHmB","NG-awYPbOAM","NG-oNy4VpIQ","NG-vs405ale","NG-8Xjr11M2","NG-29MdRY3o","NG-d7XVTUig","NG-WAj6aNbY","NG-4M8dW9K2","NG-kdglvFfu","NG-ALgkSwQR","NG-nxwxlzZm","NG-ckDd3G8Y","NG-rhTbN97i","NG-9kvI4WHd","NG-O59AiVF6","NG-nAtYsgot","NG-IsPHDzKh","NG-xQfB15cT","NG-UIIDDBlF","NG-5e8HOB61","NG-SBO7trCJ","NG-xNc1BVMn","NG-hWTc4eIR","NG-HTq5vpin","NG-wkj3agL4","NG-EuauakzT","NG-BLRnrO8s","NG-5METCH53","NG-Je9rKiE4","NG-l2u6w8zg","NG-uDgcDdUk","NG-Wvz4MvNN","NG-KKHnXamI","NG-rA94KeeZ","NG-3tyhHDW9","NG-CMnVrViS","NG-4lcWef57","NG-M3M0YqcA","NG-KCH5Sd6B","NG-erqgi08u","NG-Twqz1BwS","NG-J1wi7kIq","NG-nXkWBupL","NG-vXPNcLFB","NG-8eVzkHOx","NG-0FlYzxZm","NG-OqNeebVZ","NG-EMcjATk9","NG-D8I5Sk5W","NG-uEd9zOx4","NG-aRpWhQ8N","NG-4dnbYZxT","NG-YBYhxvfm","NG-tViDJ97u","NG-kbUQR6Ay","NG-bmvSavni","NG-tQZjnCpL","NG-xfYjomYR","NG-c7JqLXnx","NG-MGDeyZM6","NG-hzsOrvUk","NG-3efw2d1n","NG-LjuTINYX","NG-2O3KM1aL","NG-GtNxss6l","NG-vPTFKo3q","NG-41MtwqxV","NG-Bjj3q5WA","NG-YkmTvxp5","NG-LoHEz6dp","NG-BPXkU64O","NG-zHYj47tf","NG-f4N6L6bi","NG-bAP8RXWj","NG-FWNtfvK9","NG-29GmCfmc","NG-okQRvFk7","NG-gNYdoXaL","NG-bX3CZwpB","NG-QcgmXXGt","NG-yUJF1cB4","NG-b7TNdwtF","NG-ODXYJNbX","NG-27k0o2Bx","NG-Ger4TgLb","NG-y2r1dXga","NG-VcRho5c2","NG-c6QmtfZA","NG-eOoxVhHs","NG-PBwKGnr2","NG-BDrtoIup","NG-yqrYcr81","NG-MlIoadiE","NG-lUwXRvIi","NG-0svHKaBt","NG-GM5cdlcD","NG-liaR9hb4","NG-4jYunbcd","NG-kxpiSGdr","NG-l6HdiAQX","NG-1bqdhy7t","NG-zV21De0y","NG-CP3cZ0AB","NG-7YuOEzwG","NG-KfjEnuxK","NG-IHm9jl1J","NG-s0NJlCXv","NG-WbnnzWW8","NG-BUWqmMaA","NG-WDI3357D","NG-dIH14w4W","NG-NKbZvWMm","NG-W22BmupF","NG-n7ZMNTAo","NG-pnGCovJj","NG-mPVfeMlF","NG-W0WR8G9W","NG-K3pqsWH3","NG-eE1KMdg8","NG-omF0q5K2","NG-pTEJXjzW","NG-AlwGVW4Q","NG-gAsYmdWA","NG-tdJTefAU","NG-YK4aspoc","NG-AyJllL3K","NG-IM3PgmJi","NG-P2irQDhL","NG-FBoqNPpG","NG-3GnKGdg1","NG-jt8Vnago","NG-OVn0Exoq","NG-1YYtpK4o","NG-UThnhGro","NG-KYr2CBbn","NG-RrU3sqCW","NG-oKN2Y1XG","NG-vSKCWnSd","NG-q1U7XoNp","NG-UZG3MHNf","NG-gqpalQcg","NG-qvenaYL7","NG-DFuQGsVt","NG-eGKfVX0G","NG-s09guBZQ","NG-D3FNO7Oe","NG-lzXQj5ED","NG-b9OVrHA4","NG-WDx8apdM","NG-aRrhUnoD","NG-2i1xmLAA","NG-AbVNpKwJ","NG-e8yrlhkN","NG-tBFHB78w","NG-gsdZAbCj","NG-6bCb23kI","NG-tC32KNfJ","NG-E0AThTv9","NG-11EeduyT","NG-iZE79yen","NG-Lwqq9QRk","NG-W1j3bHIF","NG-vEe8IWbn","NG-s3iXhtti","NG-G0i4JlgQ","NG-hZNCJHdo","NG-UB5Gqqk5","NG-LzyVVgd3","NG-lHz37FZI","NG-x19qMdDL","NG-AvnC7yo9","NG-8RrWT4rR","NG-YKTT4ag9","NG-YvWyqz41","NG-0OeTNnxe","NG-xV7dhcJK","NG-4uBfG1vq","NG-rDS0IZXu","NG-30oXbEzr","NG-jzM047Oi","NG-f1pHugAj","NG-PAy8jy7k","NG-nJuIa5vv","NG-cGLWl2t8","NG-0W6jqzDu","NG-NiKX8Rkk","NG-YLEks1ki","NG-yYz0XBco","NG-Awm1Pcfm","NG-piChZJq0","NG-MQSTif6g","NG-wCqyship","NG-s99moKVz","NG-OzCpwTC8","NG-9FlRcJnJ","NG-hjPfaa55","NG-EsyUbATd","NG-EsAlhupF","NG-SvVqmcRL","NG-9lOmlNop","NG-ns1YmNUW","NG-gETx2uH8","NG-QXE9r3No","NG-YzqK2NqH","NG-yiPEIOEI","NG-WZVLzCMG","NG-F9eBQKRy","NG-hTmCE4uR","NG-QIV9Ot7Z","NG-R7LjsveU","NG-68UDzzYX","NG-MQ2a0nKE","NG-Mqa5DSxz","NG-5ZtQ0P0j","NG-Tnay71uU","NG-qU4rUhDj","NG-tq797ZFv","NG-TgtZeD4M","NG-XyUj27wq","NG-vjvZv15N","NG-SYWwoAWT","NG-5mDOwW29","NG-cp73rTol","NG-qYbw0k40","NG-Zdqdke1C","NG-HGQbUxVF","NG-6tQX9sBy","NG-hbb71SE5","NG-tHHqZgP4","NG-xkf9x3pq","NG-p4jMi918","NG-kgC74Olg","NG-OjR28XkT","NG-EiuRZHLV","NG-ataGijLG","NG-2NEm14w1","NG-NkA2roDk","NG-uH4A6KHz","NG-OFwJ6hTG","NG-1Iywi4TL","NG-XF5oaspM","NG-ithkl9Gv","NG-3TWf0rMM","NG-OBh8nFI0","NG-MqSov1Ib","NG-wnPpAU29","NG-yYt3UxZO","NG-ln1wuIWY","NG-f8e4DgkG","NG-ECwW5HJo","NG-TgcQvGvc","NG-4n0YK8P9","NG-CVXLOPdm","NG-szgCdDPl","NG-kK7qi7sE","NG-0QIXCZ0m","NG-KwnQDQlH","NG-M5UR17LC","NG-sJXDxUJV","NG-6SmqkxFN","NG-2OKDifFs","NG-OeqXbVif","NG-nDwkxMnS","NG-3nZegNTW","NG-pkluTxXq","NG-CkTmYo0x","NG-tuZj4uji","NG-u49pFtLO","NG-iNd2OyYv","NG-MraViOVr","NG-mHqJApnN","NG-wxYlGdw0","NG-TsWqfLdN","NG-4d2KUKGP","NG-9RaaL287","NG-7jLiPsIv","NG-libkE7Lx","NG-it2psiPP","NG-o0eEzSr3","NG-lJXwgtbJ","NG-HRmmh9xx","NG-HqhkzusW","NG-lpX8pqSZ","NG-MM5KTFD7","NG-mBQonh7x","NG-EMWuhcQy","NG-kopcyy7k","NG-eUL7oTvZ","NG-rPGGcQ7d","NG-nvp8Je4Y","NG-VFq7zNX7","NG-8cGlwq8X","NG-VY6IbDCJ","NG-tWPemm9X","NG-RCXOOptj","NG-NHgGE3qq","NG-YKgrNttO","NG-EFhrQrUa","NG-jowpzvkA","NG-sGbNUe7C","NG-qd0V5ydR","NG-lqMoefI8","NG-UEGZmaeq","NG-58o1I0tV","NG-ADeSQkHA","NG-eGmjKvFh","NG-wJNVd9nR","NG-er9AviHK","NG-M8i6EAg4","NG-rEe2lM42","NG-IixUae4w","NG-KEDSjofV","NG-OgSjFIgF","NG-HQzLSoqd","NG-o0DzlAOB","NG-thLv6XUJ","NG-m8dT2J5Z","NG-kPdyJmtP","NG-6Pu0c7V0","NG-tmovWISb","NG-KJPJrssC","NG-KtVNlKpD","NG-7XVzX3Ea","NG-M3BMgXMY","NG-EKoNs31t","NG-rNSoH04e","NG-MLGTfwOL","NG-4AplJGEZ","NG-tmesGOYl","NG-v5Zg1ysl","NG-KWJ6ogOm","NG-MPL958b3","NG-P7unxAU6","NG-VQuw7wgs","NG-gJhpi3Bj","NG-nzS77YtD","NG-uHJmtxMB","NG-lnNL4vSY","NG-tE0wkGtp","NG-8x3s13l3","NG-DqmPxqn2","NG-jRKiYOYR","NG-yxLbiYWD","NG-cIcMzDuA","NG-3T1LNeFO","NG-S74kVpUX","NG-MSZK8NOF","NG-1ucaBfPu","NG-PKBGGiSK","NG-QxF8If34","NG-TupBip8W","NG-d8OkRApl","NG-YBTqBTwP","NG-qp2fc4Vm","NG-KBhdzknx","NG-q0iZk2PG","NG-w4tEFj95","NG-zz3sAZAb","NG-hCJCnGp6","NG-eAb5KxLQ","NG-uErGhgLP","NG-Bf1OXf9l","NG-LOJfZ36q","NG-749TAoKb","NG-kl9tM1GL","NG-xLUixyGQ","NG-LaS3bsRu","NG-Bq9DpTRv","NG-PAEQDKTV","NG-GR6L5TeU","NG-ACyzpDCd","NG-UqVOlUu4","NG-xpoEEVwj","NG-RWci4l6p","NG-YBcGWi4O","NG-ajYlogV8","NG-M9Y8JTkm","NG-8c8aYBEv","NG-3qi8WU0s","NG-PlPYchGY","NG-TrHCIBUB","NG-1aLllaNK","NG-1H1Ky1TJ","NG-xtxndS36","NG-H4HWhJ5R","NG-24uhmmgl","NG-4sX3KwyQ","NG-3lqQ2BQT","NG-tV0nbE9q","NG-7n6eUaXY","NG-cqo6bJT0","NG-tF9vl2R6","NG-mSGgimaP","NG-VH3tOrNl","NG-fFHSoiVh","NG-cGzAi14w","NG-gpWURm7P","NG-0cXdu4EO","NG-rxSCTzmA","NG-zpBtt4lz","NG-y7kL2ELj","NG-PcKsGR7H","NG-WPCHJDBH","NG-aAz7jAtR","NG-DPuGpz4E","NG-DRL4C3No","NG-JQPjI56T","NG-nLx2fSHj","NG-4nBuy3ws","NG-X5PestAW","NG-iBnucmG7","NG-NMb6GzQu","NG-laTorYr0","NG-tcey406Z","NG-ocybCvi9","NG-dPcKYDAV","NG-fc8UlQ2S","NG-96TTeIbO","NG-C5AByX31","NG-tnl1KB4D","NG-vMn9ER4x","NG-plS05mly","NG-HVQJFLDP","NG-B7iwvpOd","NG-J1KjTeEc","NG-clH4a7wC","NG-YS0k9DMr","NG-gR2eRVgW","NG-FQf13Qez","NG-SbhRZyto","NG-QHd0R0N7","NG-makdRkG9","NG-QqPlgCxX","NG-OpLfbpG8","NG-9zkD3B4d","NG-w24ftuZx","NG-J1XfUUsI","NG-vot9nEZc","NG-bxlSyQMF","NG-UYCOCdY0","NG-DrtEYagT","NG-ftEYN88k","NG-IPwVhvyo","NG-HloK5QuQ","NG-4ls9ZLaT","NG-r65lBgIR","NG-AwBqYwz0","NG-xRmMe4kV","NG-uzbhmz2W","NG-HUzaouI2","NG-FAza4ero","NG-XzC2yRV8","NG-ZHAHtPqy","NG-R4fonFmG","NG-8WYsFeO9","NG-rehXf3SS","NG-0JYmyOHg","NG-brsi6PA0","NG-RcNrTNvw","NG-UU8FgW70","NG-61B4LQ2E","NG-jfGc8xNo","NG-tSimNsgP","NG-gnUKfTIU","NG-AHBv4Vih","NG-tDtI21z4","NG-7b3u8JxX","NG-7CINzskj","NG-4Ks5aKOZ","NG-q8XS8rZW","NG-EAeSfdwh","NG-F7zdrHZK","NG-crWGMNts","NG-0GEguKch","NG-bKsGjXTW","NG-cqaUlVnK","NG-rvMc3fo8","NG-MSNKQtJ5","NG-Iu0mGDIh","NG-8h3If4Bp","NG-0ksZBC20","NG-IlL0P9lP","NG-2JB25D1n","NG-LO4uCtJl","NG-FfkWOdCh","NG-oFM29JV1","NG-oZ7SRNMO","NG-IbUaAt9u","NG-wvD8dFto","NG-G3vrNK1v","NG-I8NYwnQT","NG-P0O0tCup","NG-aNfG7OMW","NG-BsSGFORj","NG-zExAV9vG","NG-Q6PKlaXj","NG-L4RUbbJj","NG-rUMHsRJ8","NG-JwHlC2Tj","NG-6IvvZtzZ","NG-0nhXSj5C","NG-GLE94Jo7","NG-kWiTH4kV","NG-11fSdJgV","NG-Q1hQzoIt","NG-hnw6oWC6","NG-eZ1B19aM","NG-Er1qdurx","NG-WjraIeN8","NG-hwgXm4GF","NG-ewtZgVY0","NG-bzt5sXKt","NG-Nk3ia2gC","NG-XJKy1iQm","NG-hwlYq6Bn","NG-h8F7qcce","NG-ODykZ7pH","NG-lxAxOoCS","NG-VdrRH6Zj","NG-vk8b8FYf","NG-CUhbSrkB","NG-WetShyJa","NG-gdGTULYb","NG-56sTyC9s","NG-ZY0Wpn43","NG-o3RyVcfI","NG-sqzhc4vU","NG-pZHfE2DP","NG-TTpRybiX","NG-eVzuk99u","NG-uX5sNNhk","NG-QHF8X2Iv","NG-4L1bc9eq","NG-l8pDagwH","NG-yC3hge27","NG-DjWBk8wv","NG-QjvPy8Nw","NG-0XSKb9pr","NG-X5cHOPz7","NG-glpjsD6Y","NG-AZAuL5IK","NG-ft8GtSWB","NG-OyEvtUiy","NG-BHGbkGe5","NG-IO2vy4i5","NG-03zuRBZn","NG-dCt5sNs9","NG-Uqt5WBOQ","NG-76RSDjrH","NG-KzBqmeTr","NG-LZkLwc3c","NG-DZiXmDG3","NG-oJOBXePs","NG-DvvJyjVe","NG-dtefqj1K","NG-InDNQchb","NG-9TPaN0IQ","NG-BP1M4WWl","NG-Ac8ppRPu","NG-WXU0Mj1z","NG-VbgKyM4Y","NG-He03GMNm","NG-cd7FJ7ik","NG-Gg57IP0l","NG-NkSOap4h","NG-QW1YG0cr","NG-8Qaoj26F","NG-M6qTy9Vz","NG-o0Qu3QRl","NG-bXq4aTQ1","NG-dbM07nd8","NG-9zU4Mfiy","NG-aEtISIBb","NG-fbyH0T8b","NG-Zen8Rfvz","NG-c8Q7ZYWj","NG-3nYHSv3N","NG-IMEG7mZk","NG-xnu8L3Nk","NG-iloonEbU","NG-lgFPA29H","NG-FLxyIOtM","NG-GyePovVb","NG-OCNW5mYq","NG-8JvtV5Sb","NG-rb6mASA2","NG-PWcsLFEq","NG-GIFXBFnU","NG-nBZQZhD9","NG-KncGIVrI","NG-rDPti3Jq","NG-NHrpjpPf","NG-L6UUGOne","NG-kT1Fy0hx","NG-VXlkWG5C","NG-nnwSpIKY","NG-jJyBkLU1","NG-czAewho1","NG-Zmbkrh9P","NG-u7UtW2IY","NG-EYFIsoPb","NG-pD9GtGMg","NG-KHH34kJN","NG-wbLcQyfs","NG-jJjyHyuS","NG-Z3NcNec5","NG-54VEKREV","NG-EmJfawbg","NG-3Rr6FSoH","NG-e4nFw7gn","NG-03PozzBw","NG-nKx2uddu","NG-60AtgOvW","NG-K1vl63QM","NG-N2MEuesU","NG-Z1CKTjLO","NG-AlniewPU","NG-Kp2ZxNtl","NG-QhMxmXaa","NG-6REezCo7","NG-GgIh9GQH","NG-1OUyzjjE","NG-vNMdJ9NW","NG-V6O2vikh","NG-HcpWdrEQ","NG-oZYhJ6RD","NG-BJGmSyUA","NG-dX626jFL","NG-sF9z7Zkp","NG-1ORqObA9","NG-jJXC0fsA","NG-LmA2bdTY","NG-nqxrmHn2","NG-mKnqRbAq","NG-E5yZksEs","NG-mL8SfH7j","NG-1vPASLW4","NG-jruWAL7N","NG-b5z1sHku","NG-mm8KAyLP","NG-L0N2mCCr","NG-mU7rIwGZ","NG-maQTyWey","NG-Lbhsr2ul","NG-R5BnLgbF","NG-40z4blxn","NG-DrByA6UK","NG-8UcuR8GP","NG-ypUochtX","NG-yyGBKh89","NG-qVtieuAf","NG-AgoJ6Jyf","NG-JgePKKrw","NG-ypErYhU3","NG-VOFOtkq3","NG-sdhNOtwQ","NG-5Rfmfb4P","NG-DLxEsGq5","NG-3S4AUZRL","NG-c5JOsgfC","NG-hCRT1CsZ","NG-YFAU4W5P","NG-FMT0aeCE","NG-qee2J2fg","NG-ptrjNVtM","NG-JA5WmXAJ","NG-ykltqi1b","NG-Sy6zUckL","NG-BKhHJMLg","NG-lCVDdNja","NG-WVEoUWAC","NG-wWBST3hy","NG-dRMQZpvZ","NG-fvTFUJ6G","NG-iO6TerYJ","NG-jIotiU9r","NG-kvJhjhzM","NG-lkdPo6uV","NG-i1HTAkCX","NG-YywKt2kp","NG-Opfe3gI8","NG-lRJNTXYt","NG-I8f4WdJs","NG-QSxCCvA4","NG-AhSNz91K","NG-4d9HrbAp","NG-kJkJw7U8","NG-tXLXnrbp","NG-MzaTZY6o","NG-tEt5sqeK","NG-Ord8Hln8","NG-qlo1jPtD","NG-wKrLTtva","NG-l4oU45gm","NG-3Q9hVu5N","NG-9CywJT0Y","NG-R3NtMsHY","NG-VXkkUUf4","NG-4rsUZ2jN","NG-ES8oiEia","NG-wKIiLh1n","NG-s68Ijb0s","NG-jqZLxu1y","NG-ACg4oW1w","NG-SodMIvYb","NG-NDfZu4Ts","NG-LbrsTT9N","NG-m4vA0KHn","NG-fb2D3Fvq","NG-ZKuNr731","NG-KHte30gm","NG-ei850syX","NG-6ggSXaoE","NG-zUkGr0KY","NG-v2mFmrEF","NG-7A0yqx0a","NG-LB3A0cAS","NG-r34Gkt7d","NG-L7pUiy8U","NG-UN7malWP","NG-ER2nty0b","NG-TrPPiyt9","NG-aCmFVFQM","NG-nYAkn1zi","NG-cKVN3bEM","NG-mtWtwx78","NG-6Gf5OZKA","NG-ITml5tgl","NG-XlfRvKlr","NG-Zny9IZ3N","NG-T9hVPcKM","NG-P6vUaGUD","NG-v70ufNa4","NG-quXNwKJS","NG-M7DlluSk","NG-gAe08ukI","NG-B1wRS8py","NG-Wki1NJuf","NG-l0F1KkOA","NG-3zzJAOXM","NG-HLIEvz0L","NG-zRpV0l41","NG-ku2kxn9r","NG-VeBH3SqE","NG-fR4Z0kil","NG-50hTEWyE","NG-l69gOkjl","NG-i19tfebl","NG-7ZIT1RgA","NG-9GD7Mdwi","NG-U0qcb1HN","NG-G4DcM6cl","NG-RcanVmbx","NG-URap7M5W","NG-WBJUzmoX","NG-2C4pCqRz","NG-TFVGQL5w","NG-bNDOe58T","NG-R3f7WIwj","NG-RdouTxk6","NG-3GZiwobX","NG-lo6RbfI4","NG-Yquk2vY7","NG-elM5M27U","NG-CppeqiTb","NG-KrcfjV6n","NG-VeDx00WA","NG-5TfMXfsn","NG-BM5qnPqy","NG-IZ3daZtT","NG-dsEe3IfC","NG-yzYHiRE1","NG-b490XVxz","NG-J9Ya00Wn","NG-TYa8BQtl","NG-7tlUomTc","NG-FL6m8XaK","NG-w85CRxTh","NG-ayDM4MZq","NG-dOCZgz5d","NG-teh0gsop","NG-10AD4quk","NG-tzs5ANYZ","NG-kiXzvAI0","NG-YzaIwVTs","NG-nkIpkpA7","NG-j0BM2lRz","NG-TfYgx0na","NG-jBhBSKJm","NG-OlIZILKs","NG-ys3DYYRQ","NG-EnY9sONF","NG-XFfIkcic","NG-zGCfwspr","NG-kxXq4JL5","NG-a5xcvkK7","NG-SSEcLy9e","NG-O5l7pQb9","NG-VfBEsHDY","NG-s1GPxLiG","NG-mc5YcUdc","NG-qsawafDo","NG-OUg3ESQW","NG-wrVLBTlI","NG-dWE91lnT","NG-Ofa80fDv","NG-0lkdRfE1","NG-2NcB7vYK","NG-MeGKdrtj","NG-Bs5cVwbH","NG-3ttUxNKX","NG-GJJiiF1Z","NG-yUtTQEkQ","NG-X5a0ayQu","NG-a4Tfdnuc","NG-zXMhLYWF","NG-uUPXmLzE","NG-ZFNsh3lK","NG-JeRCc2lb","NG-3tjD02ow","NG-dlgncXvV","NG-HVyhZEae","NG-nZbcDyPx","NG-m9kIL2KZ","NG-28nkynjE","NG-e7X72Mfg","NG-WtXNFwyi","NG-SNZlQICR","NG-utlKM7uV","NG-LmTeI0hr","NG-uenax6w6","NG-AyASUl29","NG-dkBTNbjt","NG-FKD8AuI6","NG-hiINgSKN","NG-59yB0ue3","NG-w2q2aTuI","NG-y6evYAi3","NG-WbqXxaeA","NG-sHLfRJ4C","NG-WL9h6gkh","NG-MNbsKV74","NG-YVx28J6x","NG-Na8eh1tu","NG-VPAb9CX9","NG-zo7ojegg","NG-HtbmjRe2","NG-BymKHzRn","NG-JZ51q7AW","NG-SIe3tyH2","NG-6sxWSHCs","NG-HnwRWK48","NG-ekSzbpYz","NG-QaHMIEhO","NG-4dk8aivf","NG-LIGuvALf","NG-w22wOG6Q","NG-HU1Fb6CZ","NG-TGrQatOO","NG-GOmAESmj","NG-3gn2dTlb","NG-iA6HwqFw","NG-0m2YgVhV","NG-TKLnflD3","NG-Wji5VhdM","NG-itceFXhn","NG-mHg2DfPt","NG-ATwjtpUM","NG-WvT5THm3","NG-DXDDxEzp","NG-cziWnttQ","NG-K3A2RbEJ","NG-aFYaZwbh","NG-vzYsqKYK","NG-eNyh2NXy","NG-7EmffYu4","NG-rmWAnD6z","NG-FFYywzdz","NG-rSGX1oY4","NG-lW87Euh3","NG-iTUfxsjG","NG-wDgl0dNB","NG-T860XoZx","NG-2ZTHiLz1","NG-9bM7kpaK","NG-NM4CmGqB","NG-SXu0yjsK","NG-TciXkFg2","NG-MRZFkUaf","NG-dLFxqhDS","NG-bXHlQI82","NG-Dh0IpTNK","NG-Mtt0YugI","NG-2l2AOU1E","NG-j4SHtcmm","NG-amwHciPa","NG-c2rJl05u","NG-OdfRzauN","NG-6D3jIGRe","NG-QkxLvPZB","NG-tvRIAUmJ","NG-elzQOLhI","NG-aORJ4Rsh","NG-SOOyAk53","NG-yK7WCEhZ","NG-93mtlH4w","NG-WsijhFXf","NG-MzUVJNik","NG-MEpKNMvG","NG-Zp6K5aMk","NG-KendSvov","NG-Ivee2kHl","NG-wBw6b0iQ","NG-S5fpuNCd","NG-8zX6Wuyr","NG-PzmdDcOd","NG-Q4AVZP64","NG-BKCy6GIA","NG-is5HqEym","NG-CtAYP2MU","NG-Y0nCB321","NG-nZKqsoEH","NG-pRYgjhF4","NG-ELwBO900","NG-d8FtStxw","NG-SZkhx6mN","NG-cV2MdKEU","NG-1iGiRee5","NG-fe6hitAV","NG-XY3cHRR8","NG-6YwxkfCH","NG-wxchputr","NG-yQ5YzAZD","NG-w2AwGnDh","NG-nudEAFnI","NG-3j5RGwXO","NG-6jFmBwl5","NG-3b9KhE5n","NG-QN1tFLjO","NG-p51bq1Nr","NG-LC3C2m69","NG-MUu9McCW","NG-uDUQMz68","NG-FlvIkL6W","NG-eAzXoUao","NG-PHMjqvt5","NG-EwmhyKX0","NG-ixZS8HUF","NG-mJJ7RiJH","NG-FnoIjZBL","NG-hwtoxr5u","NG-sK0YtfhL","NG-hppgAE8J","NG-xaeDMdAZ","NG-l1GvJ4mk","NG-ZQqLDuPm","NG-DZnLbpiY","NG-qO3uxFna","NG-f7JufNCN","NG-rGldcXDc","NG-sBJUtXh6","NG-fXJFPOYb","NG-dyD4bszg","NG-wmsDGZEF","NG-mHcdrIr3","NG-NKOUgJbD","NG-e7UgqeQo","NG-PL4aHlmt","NG-e1Vn4DKz","NG-dOmRDu2R","NG-W0YROOpc","NG-UHru7QRZ","NG-cCiFvX1j","NG-x9J5uOZ2","NG-nsGYVp5B","NG-ilKA9JeM","NG-lDDvz8P4","NG-tZjcZMkm","NG-YhCBsjQL","NG-A5YsQwOz","NG-uERdEoVH","NG-C0FuD9cY","NG-OAeU4i40","NG-24CxenGX","NG-oSpQF19m","NG-eeXymTk0","NG-d2inY5bx","NG-OGEjNmXN","NG-sbkie0Lq","NG-2Bn4doTI","NG-wi6m5q50","NG-tJmeVwAU","NG-4fsqTCz3","NG-Yx5RuFEs","NG-FddU4FZn","NG-Wb0886mK","NG-fTfKNABk","NG-aO81p3Ap","NG-SN3a6nsz","NG-HvBhwYVd","NG-K3rJPUce","NG-ALW8w7cg","NG-bkrMcYTe","NG-dXtlISIE","NG-j7eivxm5","NG-7kUGxomQ","NG-jjVWB6yt","NG-MLkheNBF","NG-3ZAq1FRf","NG-eq6bHqU9","NG-DtHFr3V7","NG-RBIcKl5L","NG-Md8lakmX","NG-aDjOl0Zl","NG-rwaQDt24","NG-a1FNUSVJ","NG-z0WLY9XY","NG-lGuoao6h","NG-kWiaxfOH","NG-wYHmPLB5","NG-UdbOvDGe","NG-t1m5yvR4","NG-ECASTWh6","NG-BXwaHJzo","NG-TygVF8Wz","NG-0PoZjQaK","NG-PlssQlOR","NG-dH5Dn2Bb","NG-kn9IzGcH","NG-fmP1yUxC","NG-HCFfwR6r","NG-cRjSydq5","NG-9xo3gVHF","NG-bkyIlQau","NG-BzIBrKd5","NG-SSVk7gjF","NG-EpbxWHDh","NG-6ueJBXJE","NG-0WlJQnJY","NG-Uqan1LU4","NG-VPaqIfjG","NG-cuni62OU","NG-1ftLjnEv","NG-3dXRiFZH","NG-vJvyM8Hv","NG-605HVChZ","NG-elSEUOGr","NG-sKrw2t4B","NG-74G8bI6k","NG-LE2KT6Ci","NG-WNjRtOuK","NG-8sM1DSib","NG-kGfGoLxd","NG-EEhYPOEj","NG-f7rFoqYc","NG-fSU5RyKr","NG-cxD7ivXq","NG-cOUp43Sr","NG-rLwruxJP","NG-L2vM0SGU","NG-i0tZ3Oum","NG-LJmedByO","NG-ktHVBfrQ","NG-iJptXoIP","NG-WeQtcbXi","NG-aIW1pDjo","NG-JEHaJoGs","NG-OZ7D30YC","NG-cVXi6p2k","NG-YNhmn0I3","NG-0ee5by8Z","NG-GrCcGaKI","NG-ke2nrC4P","NG-mpQsret7","NG-5zqm6Hcf","NG-5ZbOQw9N","NG-qOyEPiV4","NG-DqxUWqdq","NG-N15avgA5","NG-vSAqbBzy","NG-OnaFzdWw","NG-QUP3C0DJ","NG-iDOULMaA","NG-xryYOqNB","NG-HCtnnsRl","NG-fTclCcsN","NG-WRrbX2UI","NG-elhCSdSH","NG-ejXCIBOn","NG-895wjzbo","NG-R7g4gsRD","NG-4AHuMKtT","NG-HnQ7gXdV","NG-kn2DAKIr","NG-ITMnua03","NG-KzvJORnE","NG-OTwGE2hk","NG-xEnxAX97","NG-pWghHK69","NG-bemU8SX0","NG-L889DOnk","NG-2Yos5sFf","NG-BS8RUJwu","NG-wC5mzHwf","NG-cRXDRZWu","NG-pbqh9MkK","NG-VVz6dobe","NG-0S2Idelr","NG-MxMu6C1N","NG-oBbA5msx","NG-eZWN0l9G","NG-PaejhWy2","NG-d16yQCOl","NG-UQrw8ei0","NG-5SgasJUI","NG-Rigtf2K3","NG-R13duxUy","NG-SmkdeSmf","NG-aCANrDQb","NG-6u5SVYHf","NG-BOp6TPKH","NG-sANVkEqV","NG-ZTRp3w73","NG-b2Fmrf4e","NG-vN1pDv0x","NG-zxk3MdRK","NG-EELIrcxn","NG-pLpjFY8Y","NG-jkbI3u2x","NG-Lk4yUUsm","NG-PRqglVzb","NG-RBLBJw2s","NG-vGeFTO7D","NG-bPsFA9gG","NG-ikY9FMEG","NG-xPRAXXVj","NG-0jvDUR83","NG-aMuQdNOV","NG-9DQmrdqO","NG-vSa6VlZS","NG-WXkA4YMi","NG-RdAN0OO8","NG-Nj97tFyF","NG-A6MVdAvt","NG-qX7TFnhi","NG-FNhyrkm1","NG-BByanhDW","NG-eE5uY3OH","NG-NjAk617z","NG-i8lj7RXB","NG-cehzbE5z","NG-DZhtTKP5","NG-moe8R4N6","NG-01vHlOSr","NG-gaVvz6Ro","NG-2qxki3IH","NG-fW7gSs43","NG-uDkCxaId","NG-spZL1lGX","NG-Oe9AziVM","NG-r8Lwyqis","NG-RJqTVHmN","NG-SQXLwHFz","NG-QTRzy5RC","NG-JyjNtf7C","NG-HQ3ldA7K","NG-cMiHN2dQ","NG-c7F5cChr","NG-HDB95ob1","NG-Ge8koBQQ","NG-Nj0ESz3T","NG-DmW2w5wl","NG-sTfmUIxK","NG-8J5dRYDy","NG-QjQcXyN6","NG-X5sZQqH2","NG-cbcvX7nh","NG-cmRoNyI0","NG-1B59pMMy","NG-Df6UZX4T","NG-3md6TKuB","NG-rQiQL4Kp","NG-VoC086iy","NG-1Zl3c3ui","NG-j2eglVnm","NG-avF7Bi8r","NG-OcBYR3i6","NG-BuIbvDTI","NG-H60Eb9lL","NG-CdVr8pcv","NG-nCPxPg7M","NG-4HljV4zq","NG-2O1z88bh","NG-9d0IL6eE","NG-kx1vp8eU","NG-5Zm99x7b","NG-fHDnRfc7","NG-RCCmixof","NG-VS88IxpN","NG-1vEvMRUY","NG-tPcamr5e","NG-TS5Vm2BR","NG-7R6HzAbo","NG-5OsugWbB","NG-ZTrjhBQW","NG-bZ8lPcBb","NG-hJ2pTE0i","NG-Cu1yld38","NG-h4fydHYz","NG-2gD4Oho7","NG-DiUlRwul","NG-BTll3HJ6","NG-r5IiOpiX","NG-qYpsEe6m","NG-u9BmhgZw","NG-Um1lLqzB","NG-LGzJ5Ujz","NG-m60BvM0B","NG-APEDHm6R","NG-lCIXkx6N","NG-VwAbRod2","NG-TrfwHH6Q","NG-5MteP5jb","NG-rPE1yRf0","NG-muCk6B7T","NG-SITbqgwq","NG-aDNlLnE9","NG-JsVr8lwu","NG-MSdD1Ddw","NG-JCOOTMs3","NG-eDfvSkRO","NG-N5xSSCpm","NG-EQM9L75P","NG-PzRm9mTI","NG-karelKET","NG-BHdip9gV","NG-pR4uk7wU","NG-xtXchPES","NG-HhWxiN0a","NG-puTsYeui","NG-MyycgL8r","NG-QDp2Yk8Q","NG-dwx7KdR2","NG-mWcbjb2E","NG-s8Hnpg1u","NG-78d15M5X","NG-Y02h1ctE","NG-SCM1akfk","NG-GG8S6zDn","NG-kB3zFFhU","NG-3HptxsCQ","NG-7dVa9kMk","NG-ZQridnLN","NG-M6ULShBs","NG-vlmEvOLL","NG-jDNSh5sQ","NG-nY92M8sA","NG-b3UN5uJu","NG-IZ6BC8tU","NG-cH406mil","NG-rX6asU9y","NG-5MW0Ew2M","NG-MWGe6yo1","NG-vCpCJOk5","NG-600gC9zv","NG-KDuED0B0","NG-l1g3BtKi","NG-hnq6qcHO","NG-Zp4uwNcW","NG-Z9w6yxA6","NG-l1fN7l3c","NG-ACVPABmF","NG-h5hHY88i","NG-ac5w0ik1","NG-vydyg6BW","NG-npG3nyJi","NG-5hg3aSOh","NG-9T6RRn0l","NG-aiD17pPB","NG-T3s7QHbK","NG-NIHLoKaM","NG-s5OsD5up","NG-TYax1gX4","NG-eQ11ndr2","NG-HbbG0x7B","NG-d5KP3QTH","NG-Za0Ompsm","NG-nPBMA71f","NG-2r6JTt9X","NG-0v0pys8n","NG-qWe7W0Ul","NG-EH9by8sE","NG-TodXJmgL","NG-JmcLV0tb","NG-YXnt9wyD","NG-PF8DLnJS","NG-sqn7vFHC","NG-dv6TyS8u","NG-2eYVS5PE","NG-GZQxD1p6","NG-hr8qZz7B","NG-b2s5FIyB","NG-q1ecybBa","NG-2BbfpSOR","NG-zfDkIoBB","NG-0kOsUKGg","NG-0LhC6KGH","NG-H0eR9L1N","NG-omXDGDDl","NG-coPbL0V6","NG-JF6NX7Fc","NG-Y8zQPP8s","NG-5JD9Y3u2","NG-aFPey7z5","NG-KP611qfu","NG-CfEBZcF4","NG-MR8ew7i0","NG-sWNtlojr","NG-ZfPWHx59","NG-XGQbcfg5","NG-rPjQfsnN","NG-CQZBI4yA","NG-2nNPIQ6H","NG-sGKBoYbq","NG-3702beyG","NG-pNTa1gTR","NG-1RPPqQdG","NG-nphTpC6z","NG-SfN1HBpX","NG-jKKkIEdN","NG-nGpB9FDr","NG-pcN3ohep","NG-bvhgQOHC","NG-Hqw60Njp","NG-q4BV9u6Q","NG-6t608DYE","NG-EN89V9Pl","NG-e1mpTfX3","NG-DdQQyE5r","NG-EiY5R01t","NG-4P4vZHBe","NG-Q0oYCtBW","NG-HbWOmNu5","NG-5I2A0TER","NG-xmuQKQvD","NG-yj84J7gE","NG-MUaTINIO","NG-heYDycHd","NG-u8Ql6BqJ","NG-SvMp6Npc","NG-Va1Co7ny","NG-xDt3b318","NG-bCz6rH6J","NG-6uOtTeRe","NG-jZchDooZ","NG-8j21Q1Fy","NG-D0AJb7ty","NG-Z16cZjwU","NG-nC5TPTHH","NG-5Nm5UoYu","NG-JYzO1gS7","NG-uJTmkqEO","NG-q0lBwtMX","NG-dCZFUoTw","NG-B2qh5Dpt","NG-yMluysgJ","NG-OlPUzBmY","NG-jTTSxWCC","NG-2AYINkg1","NG-Fu9jX95A","NG-12QDy9RO","NG-Z19EN321","NG-cF4TWnr2","NG-70on6IkF","NG-OTSxJF6n","NG-IwdioXpT","NG-PIGvciE3","NG-XDsE2y51","NG-HSpVJLjv","NG-PGXxb9I5","NG-J670QoMY","NG-pY0z5cEY","NG-avGV6VNQ","NG-2F8P5mSu","NG-XOAzTnDN","NG-rrHTmtU5","NG-8GVreiyv","NG-VzyQiUhI","NG-OgIVB6Xh","NG-z51PUBV6","NG-uZQ5V5wp","NG-TrBqrqCC","NG-d15nJm24","NG-oAcBBuRH","NG-FZFZpvX7","NG-Y6HBEREG","NG-p8ps5YSQ","NG-296Dgono","NG-XHNT7D6x","NG-Sqo1XUr5","NG-bKZZPPbQ","NG-r9PS4tF1","NG-eAGv10Mw","NG-P86UFIYm","NG-FHiI1wwh","NG-3UUdgn8Z","NG-27cwUDQh","NG-jOpF9rhw","NG-Z9Ktsv6i","NG-fQ6csaji","NG-BcbeTY6M","NG-BRXuuEl9","NG-7TfkDn0n","NG-o37XFyRY","NG-LT7dwM1e","NG-fW5kscOp","NG-z404TUqO","NG-9hFYsou8","NG-p7Rb5Grm","NG-yDo4J3qC","NG-FtGJy6gF","NG-CKYKrzvf","NG-y3679Flq","NG-PEBapQxT","NG-fEEQmQsB","NG-Sdr8kppg","NG-wNa0Sp8x","NG-yICYfPHm","NG-79t7Qkhl","NG-0nl9QAn1","NG-jHxCqQjV","NG-MKMyUXNC","NG-RTxAOQvH","NG-uQufvjey","NG-mgVOU8Va","NG-FjY8jGL7","NG-42FQA6gt","NG-0rQncSeK","NG-u6DTQ1iO","NG-pC8GL4sQ","NG-OBvxrq9l","NG-hJey42jC","NG-BKkHriW4","NG-jMBkqfck","NG-bY5bysAF","NG-5tfxHv1g","NG-0T5R7yx1","NG-EoGIztcf","NG-42IRqgQH","NG-PBVqQ7N2","NG-R8a3jake","NG-49VpSjEQ","NG-1z0aV080","NG-GbsZ51TD","NG-ABMbPH6K","NG-mgl6hhbb","NG-C9Yj0mEv","NG-1FxTUuMC","NG-TtMbXWuO","NG-3ote7stw","NG-nEAQOHky","NG-HBK9ajb1","NG-1Ggk01Yg","NG-Km4VT6qa","NG-Q6gXTDyc","NG-LCCEV5l2","NG-63KhWL3s","NG-mHiuTKE3","NG-jBO1V709","NG-w1Lw8iFD","NG-OFamigfu","NG-ZGXINsAV","NG-P5N22h7Q","NG-RnRlOJa9","NG-gxiOSIFR","NG-BPAqB0X5","NG-BN0GYosH","NG-X5hL73ly","NG-Lh2JDMtc","NG-zcFjq9BG","NG-PH7VkOfW","NG-V5YCd5Ce","NG-DVBZZxEK","NG-zhjqfbcH","NG-DpKNj4Xd","NG-xXwRbBOB","NG-c6RPqHfS","NG-0I5zMl1P","NG-qItRe6iI","NG-o1Bebmrk","NG-ArPFtBcQ","NG-KDmUpX7T","NG-V5s5d59L","NG-5QB7bukq","NG-s1zavSkh","NG-c8LgqcOT","NG-buj2Jx9G","NG-z67T1mgS","NG-iK5y2GD8","NG-0QsH5N8s","NG-3hEH6Oi5","NG-qCr5Wzar","NG-YrGq3PnC","NG-NJF9qEk1","NG-Fxg251qQ","NG-6zBy2azc","NG-cUlQgLbE","NG-2bkwRQNQ","NG-8ri3OHph","NG-wsJR6o4h","NG-5Z3D3Bj0","NG-CxeBqaTg","NG-sYf9ObFN","NG-rEM1l5R0","NG-eF0rRbIf","NG-QIZbaosB","NG-SzvGXeLn","NG-KC5qo6uf","NG-S4ebc7bu","NG-9FC5vEvR","NG-oPhcP7yy","NG-CGRUcC5L","NG-AEfY3FeU","NG-ZcsCSkaF","NG-4QHBBSL1","NG-cD1odXuf","NG-gOKbpTzO","NG-b0koBY0f","NG-QoYclRbk","NG-NKMLRYiH","NG-sADmDZTU"];
+
 const STORE = "mftahAlkhair.used.v2";
 const intro = document.getElementById("intro");
 const button = document.getElementById("getKey");
 const toast = document.getElementById("toast");
+const codebox = document.getElementById("codebox");
+const codeboxText = document.getElementById("codeboxText");
+const keyActionsRow = document.getElementById("keyActionsRow");
+const btnCopyAgain = document.getElementById("btnCopyAgain");
+const btnOpenWeb = document.getElementById("btnOpenWeb");
+const btnOpenApp = document.getElementById("btnOpenApp");
+const replayIntro = document.getElementById("replayIntro");
+let currentClaimedKey = "";
 let toastTimer;
 
-function showToast(message){
-  toast.textContent=message;toast.classList.add("show");
-  clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2600);
+// Smooth Animated Number Counter
+function animateCount(element, start, end, duration = 800) {
+  if (isNaN(end)) return;
+  if (start === end) {
+    element.textContent = end.toLocaleString("ar-EG");
+    return;
+  }
+  const startTime = performance.now();
+  function updateNumber(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out cubic
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(start + (end - start) * ease);
+    element.textContent = current.toLocaleString("ar-EG");
+    if (progress < 1) {
+      requestAnimationFrame(updateNumber);
+    } else {
+      element.textContent = end.toLocaleString("ar-EG");
+    }
+  }
+  requestAnimationFrame(updateNumber);
 }
-function readUsed(){
-  try{const value=JSON.parse(localStorage.getItem(STORE)||"[]");return new Set(Array.isArray(value)?value:[]);}
-  catch{return new Set();}
+
+let lastAvail = null;
+let lastUsed = null;
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2800);
 }
-function update(){
-  const used=readUsed();
-  const usedCount=ALL_KEYS.reduce((n,k)=>n+(used.has(k)?1:0),0);
-  const available=ALL_KEYS.length-usedCount;
-  document.getElementById("available").textContent=available.toLocaleString("ar-EG");
-  document.getElementById("used").textContent=usedCount.toLocaleString("ar-EG");
-  const pct=ALL_KEYS.length?Math.round(usedCount/ALL_KEYS.length*100):0;
-  document.getElementById("percent").textContent=pct.toLocaleString("ar-EG")+"٪";
-  document.getElementById("progressBar").style.width=pct+"%";
-  button.disabled=available<=0;
-  button.querySelector("span").textContent=available>0?"مفتاح جديد متاح – اضغط لنسخه":"انتهت المفاتيح المتاحة";
+
+function readUsed() {
+  try {
+    const value = JSON.parse(localStorage.getItem(STORE) || "[]");
+    return new Set(Array.isArray(value) ? value : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function update(animate = true) {
+  const used = readUsed();
+  const usedCount = ALL_KEYS.reduce((n, k) => n + (used.has(k) ? 1 : 0), 0);
+  const available = ALL_KEYS.length - usedCount;
+
+  const availEl = document.getElementById("available");
+  const usedEl = document.getElementById("used");
+
+  if (animate && lastAvail !== null && lastUsed !== null) {
+    animateCount(availEl, lastAvail, available, 700);
+    animateCount(usedEl, lastUsed, usedCount, 700);
+  } else {
+    availEl.textContent = available.toLocaleString("ar-EG");
+    usedEl.textContent = usedCount.toLocaleString("ar-EG");
+  }
+  lastAvail = available;
+  lastUsed = usedCount;
+
+  const pct = ALL_KEYS.length ? Math.round((usedCount / ALL_KEYS.length) * 100) : 0;
+  document.getElementById("percent").textContent = pct.toLocaleString("ar-EG") + "٪";
+  document.getElementById("progressBar").style.width = pct + "%";
+
+  button.disabled = available <= 0;
+  button.querySelector("span").textContent = available > 0 ? "مفتاح جديد متاح – اضغط لنسخه" : "انتهت جميع المفاتيح المتاحة";
   return used;
 }
-async function copyText(text){
-  if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);return;}
-  const area=document.createElement("textarea");area.value=text;area.style.position="fixed";area.style.opacity="0";
-  document.body.appendChild(area);area.select();const ok=document.execCommand("copy");area.remove();
-  if(!ok)throw new Error("copy failed");
+
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const area = document.createElement("textarea");
+  area.value = text;
+  area.style.position = "fixed";
+  area.style.opacity = "0";
+  document.body.appendChild(area);
+  area.select();
+  const ok = document.execCommand("copy");
+  area.remove();
+  if (!ok) throw new Error("copy failed");
 }
-async function claim(){
-  if(button.disabled)return;
-  button.disabled=true;
-  // Lock prevents two tabs in the same browser from claiming the same next key simultaneously.
-  const run=async()=>{
-    const used=readUsed();
-    const key=ALL_KEYS.find(k=>!used.has(k));
-    if(!key){update();showToast("لا توجد مفاتيح متاحة.");return;}
-    try{
+
+// Sparkle Particle Explosion Canvas
+const canvas = document.getElementById("fxCanvas");
+const ctx = canvas.getContext("2d");
+let particles = [];
+let animId = null;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function createParticles(x, y) {
+  const colors = ["#dfad3b", "#fce49d", "#ffffff", "#107c41", "#f7cf68", "#f1a80a"];
+  for (let i = 0; i < 65; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 2.5 + Math.random() * 8.5;
+    particles.push({
+      x,
+      y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 1.5,
+      size: 3 + Math.random() * 5,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      life: 1,
+      decay: 0.015 + Math.random() * 0.02,
+      shape: Math.random() > 0.4 ? "star" : "circle"
+    });
+  }
+  if (!animId) loopParticles();
+}
+
+function drawStar(ctx, cx, cy, spikes, outerRadius, innerRadius) {
+  let rot = Math.PI / 2 * 3;
+  let x = cx;
+  let y = cy;
+  let step = Math.PI / spikes;
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - outerRadius);
+  for (let i = 0; i < spikes; i++) {
+    x = cx + Math.cos(rot) * outerRadius;
+    y = cy + Math.sin(rot) * outerRadius;
+    ctx.lineTo(x, y);
+    rot += step;
+    x = cx + Math.cos(rot) * innerRadius;
+    y = cy + Math.sin(rot) * innerRadius;
+    ctx.lineTo(x, y);
+    rot += step;
+  }
+  ctx.lineTo(cx, cy - outerRadius);
+  ctx.closePath();
+}
+
+function loopParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.16; // gravity
+    p.life -= p.decay;
+    if (p.life <= 0) {
+      particles.splice(i, 1);
+      continue;
+    }
+    ctx.save();
+    ctx.globalAlpha = p.life;
+    ctx.fillStyle = p.color;
+    if (p.shape === "star") {
+      drawStar(ctx, p.x, p.y, 5, p.size, p.size / 2);
+      ctx.fill();
+    } else {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+  if (particles.length > 0) {
+    animId = requestAnimationFrame(loopParticles);
+  } else {
+    animId = null;
+  }
+}
+
+async function claim(e) {
+  if (button.disabled) return;
+  button.disabled = true;
+
+  // Haptic feedback
+  if (navigator.vibrate) {
+    try { navigator.vibrate([35, 20, 35]); } catch {}
+  }
+
+  // Trigger sparkles from button position
+  const rect = button.getBoundingClientRect();
+  createParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+
+  const run = async () => {
+    const used = readUsed();
+    const key = ALL_KEYS.find(k => !used.has(k));
+    if (!key) {
+      update();
+      showToast("عذراً، لا توجد مفاتيح متاحة حالياً.");
+      return;
+    }
+    try {
       await copyText(key);
       used.add(key);
-      try{localStorage.setItem(STORE,JSON.stringify([...used]));}
-      catch{showToast("تم النسخ لكن تعذر حفظ سجل الاستخدام.");}
-      document.getElementById("codebox").textContent=key;
-      document.getElementById("codebox").classList.add("ready");
+      try { localStorage.setItem(STORE, JSON.stringify([...used])); }
+      catch { showToast("تم النسخ لكن تعذر حفظ سجل الاستخدام."); }
+
+      currentClaimedKey = key;
+      codebox.innerHTML = `
+        <span style="font-size: 24px; font-family: monospace; letter-spacing: 2px;">${key}</span>
+        <span class="codebox-badge">✓ تم النسخ إلى الحافظة تلقائياً</span>
+      `;
+      codebox.classList.add("ready");
+
+      // Setup secondary action links
+      const webUrl = "https://services.nusuk.sa/nusuk-svc/app?p=27&id=" + encodeURIComponent(key);
+      btnOpenWeb.href = webUrl;
+      keyActionsRow.classList.add("show");
+
       update();
-      showToast("تم نسخ المفتاح، جارٍ فتح نسك…");
-      const url="https://services.nusuk.sa/nusuk-svc/app?p=27&id="+encodeURIComponent(key);
-      window.open(url,"_blank","noopener,noreferrer");
-    }catch(e){button.disabled=false;showToast("تعذر النسخ. اسمح للموقع باستخدام الحافظة ثم حاول مجددًا.");}
+      showToast("تم نسخ المفتاح بنجاح! جارٍ فتح نسك…");
+
+      // Open nusuk web in a new window/tab
+      window.open(webUrl, "_blank", "noopener,noreferrer");
+    } catch (err) {
+      button.disabled = false;
+      showToast("تعذر النسخ التلقائي. يرجى السماح بالحافظة ثم المحاولة.");
+      console.error(err);
+    }
   };
-  try{
-    if(navigator.locks && navigator.locks.request){
-      await navigator.locks.request("mftah-al-khair-key-claim",run);
-    }else{await run();}
-  }catch(e){button.disabled=false;showToast("حدث خطأ أثناء الحصول على المفتاح.");console.error(e);}
+
+  try {
+    if (navigator.locks && navigator.locks.request) {
+      await navigator.locks.request("mftah-al-khair-key-claim", run);
+    } else {
+      await run();
+    }
+  } catch (err) {
+    button.disabled = false;
+    showToast("حدث خطأ أثناء الحصول على المفتاح.");
+    console.error(err);
+  }
   update();
 }
-button.addEventListener("click",claim);
-window.addEventListener("storage",e=>{if(e.key===STORE)update();});
-update();
 
-function playIntro(){
-  let played=false;
-  const finish=()=>{
-    if(played)return;played=true;
+button.addEventListener("click", claim);
+
+// Copy again button
+btnCopyAgain.addEventListener("click", async () => {
+  if (!currentClaimedKey) return;
+  try {
+    await copyText(currentClaimedKey);
+    showToast("تم إعادة نسخ المفتاح: " + currentClaimedKey);
+  } catch {
+    showToast("تعذر النسخ، يرجى تحديده ونسخه يدوياً.");
+  }
+});
+
+window.addEventListener("storage", e => {
+  if (e.key === STORE) update();
+});
+update(false);
+
+// Intro animation controller
+function playDoorIntro(force = false) {
+  let played = false;
+  intro.classList.remove("hide", "unlock", "open");
+  
+  const finish = () => {
+    if (played) return;
+    played = true;
     intro.classList.add("unlock");
-    setTimeout(()=>intro.classList.add("open"),950);
-    setTimeout(()=>intro.classList.add("hide"),3300);
-    try{localStorage.setItem("mftahAlkhair.introSeen","1");}catch{}
+    setTimeout(() => intro.classList.add("open"), 900);
+    setTimeout(() => intro.classList.add("hide"), 3200);
+    try { localStorage.setItem("mftahAlkhair.introSeen", "1"); } catch {}
   };
-  document.getElementById("skipIntro").addEventListener("click",()=>{
-    played=true;intro.classList.add("hide");
-    try{localStorage.setItem("mftahAlkhair.introSeen","1");}catch{}
-  });
-  let seen=false;try{seen=localStorage.getItem("mftahAlkhair.introSeen")==="1";}catch{}
-  if(seen||window.matchMedia("(prefers-reduced-motion: reduce)").matches){intro.classList.add("hide");return;}
-  setTimeout(finish,800);
+
+  document.getElementById("skipIntro").onclick = () => {
+    played = true;
+    intro.classList.add("hide");
+    try { localStorage.setItem("mftahAlkhair.introSeen", "1"); } catch {}
+  };
+
+  if (!force) {
+    let seen = false;
+    try { seen = localStorage.getItem("mftahAlkhair.introSeen") === "1"; } catch {}
+    if (seen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      intro.classList.add("hide");
+      return;
+    }
+  }
+
+  setTimeout(finish, 850);
 }
-playIntro();
+
+replayIntro.addEventListener("click", () => {
+  playDoorIntro(true);
+});
+
+playDoorIntro(false);
 })();
 </script>
 </body>
