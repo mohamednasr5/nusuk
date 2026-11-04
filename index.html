@@ -691,6 +691,58 @@ h1 {
   box-shadow: 0 0 10px rgba(223, 173, 59, 0.5);
 }
 
+
+.skip-controls-area {
+  margin-top: 18px;
+  padding: 12px 16px;
+  background: #fbf9f4;
+  border: 1px dashed rgba(223, 173, 59, 0.55);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skip-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.skip-buttons-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn-skip-tag {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--green-900);
+  padding: 6px 13px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+.btn-skip-tag:hover {
+  background: #f4eee2;
+  border-color: var(--gold-500);
+  color: var(--gold-700);
+  transform: translateY(-1px);
+}
+.btn-secondary.btn-danger {
+  color: #bd311a;
+  border-color: rgba(189, 49, 26, 0.35);
+  background: #fff8f7;
+}
+.btn-secondary.btn-danger:hover {
+  background: #feece8;
+  border-color: #bd311a;
+  color: #8f1c09;
+}
+
 /* Feature Pills Row */
 .feature-row {
   display: grid;
@@ -1151,6 +1203,10 @@ footer a:hover {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>تثبيت التطبيق (إذا لم يكن لديك)</span>
         </a>
+        <button type="button" class="btn-secondary btn-danger" id="btnReportUsed" title="اضغط لاستبدال الكود فوراً إذا ظهر لك في نسك أنه مستخدم">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>مستخدم مسبقاً؟ استبدله فوراً ✕</span>
+        </button>
       </div>
 
       <button class="action" id="getKey" type="button">
@@ -1170,6 +1226,15 @@ footer a:hover {
         </div>
         <div class="progress">
           <span id="progressBar"></span>
+        </div>
+      </div>
+
+      <div class="skip-controls-area">
+        <span class="skip-label">هل استهلكت أكواداً سابقة في نسك؟</span>
+        <div class="skip-buttons-row">
+          <button type="button" class="btn-skip-tag" id="btnSkip200" title="تخطي أول 200 كود والبدء من الأكواد الجديدة">تخطي أول 200 كود ⏭</button>
+          <button type="button" class="btn-skip-tag" id="btnSkip500" title="تخطي أول 500 كود">تخطي أول 500 كود ⏭</button>
+          <button type="button" class="btn-skip-tag" id="btnSkipNext50" title="تخطي 50 كود إضافية">تخطي 50 كود</button>
         </div>
       </div>
 
@@ -1265,13 +1330,61 @@ function showToast(message) {
   toastTimer = setTimeout(() => toast.classList.remove("show"), 2800);
 }
 
-function readUsed() {
+function saveUsed(usedSet) {
+  const arr = [...usedSet];
   try {
-    const value = JSON.parse(localStorage.getItem(STORE) || "[]");
-    return new Set(Array.isArray(value) ? value : []);
-  } catch {
-    return new Set();
+    localStorage.setItem(STORE, JSON.stringify(arr));
+    localStorage.setItem("mftahAlkhair.used.v2", JSON.stringify(arr));
+  } catch (_) {}
+}
+
+function readUsed() {
+  const combined = new Set();
+  // 1. Recover all previous used codes across all versions
+  const keysToInspect = [
+    "mftahAlkhair.used",
+    "mftahAlkhair.used.v1",
+    "mftahAlkhair.used.v2",
+    "mftahAlkhair.used.v3"
+  ];
+  for (const sk of keysToInspect) {
+    try {
+      const val = JSON.parse(localStorage.getItem(sk) || "[]");
+      if (Array.isArray(val)) {
+        for (const code of val) {
+          if (typeof code === "string" && code.startsWith("NG-")) {
+            combined.add(code);
+          }
+        }
+      }
+    } catch (_) {}
   }
+
+  // 2. Check if user is returning or new
+  // A returning user has visited before or has codes from earlier
+  const isReturning = localStorage.getItem("mftahAlkhair.hasVisited") === "1"
+                   || localStorage.getItem("mftahAlkhair.used.v2") !== null
+                   || localStorage.getItem("mftahAlkhair.introSeen") === "1"
+                   || combined.size > 2;
+
+  if (isReturning) {
+    // If returning user and hasn't yet applied the 200 skip offset
+    if (localStorage.getItem("mftahAlkhair.skip200Applied") !== "1") {
+      // Add codes from index 2 up to index 200 (preserving index 0 and 1 as NG-OCRFHaTW and NG-krAE5yvl)
+      for (let i = 2; i <= 200 && i < ALL_KEYS.length; i++) {
+        combined.add(ALL_KEYS[i]);
+      }
+      localStorage.setItem("mftahAlkhair.skip200Applied", "1");
+      saveUsed(combined);
+    }
+  } else {
+    // Brand new user: mark visited so future visits know, but do NOT skip codes 2..200
+    try {
+      localStorage.setItem("mftahAlkhair.hasVisited", "1");
+    } catch (_) {}
+  }
+
+  return combined;
 }
 
 function update(animate = true) {
@@ -1427,8 +1540,7 @@ async function claim(e) {
     try {
       await copyText(key);
       used.add(key);
-      try { localStorage.setItem(STORE, JSON.stringify([...used])); }
-      catch { showToast("تم النسخ لكن تعذر حفظ سجل الاستخدام."); }
+      saveUsed(used);
 
       currentClaimedKey = key;
       codebox.innerHTML = `
@@ -1492,6 +1604,59 @@ window.addEventListener("storage", e => {
   if (e.key === STORE) update();
 });
 update(false);
+
+// Replace already used code immediately
+const btnReportUsed = document.getElementById("btnReportUsed");
+if (btnReportUsed) {
+  btnReportUsed.addEventListener("click", async () => {
+    if (!currentClaimedKey) return;
+    const used = readUsed();
+    used.add(currentClaimedKey);
+    saveUsed(used);
+    showToast("تم استبعاد الكود وجلب كود جديد غير مستخدم…");
+    claim();
+  });
+}
+
+function skipCodes(count) {
+  const used = readUsed();
+  let skipped = 0;
+  for (let i = 2; i < ALL_KEYS.length && skipped < count; i++) {
+    if (!used.has(ALL_KEYS[i])) {
+      used.add(ALL_KEYS[i]);
+      skipped++;
+    }
+  }
+  saveUsed(used);
+  update();
+  showToast("تم تخطي " + skipped.toLocaleString("ar-EG") + " كود بنجاح!");
+}
+
+document.getElementById("btnSkip200")?.addEventListener("click", () => {
+  const used = readUsed();
+  for (let i = 2; i <= 200 && i < ALL_KEYS.length; i++) {
+    used.add(ALL_KEYS[i]);
+  }
+  saveUsed(used);
+  localStorage.setItem("mftahAlkhair.skip200Applied", "1");
+  update();
+  showToast("تم تخطي أول 200 كود مستهلكة بنجاح!");
+});
+
+document.getElementById("btnSkip500")?.addEventListener("click", () => {
+  const used = readUsed();
+  for (let i = 2; i <= 500 && i < ALL_KEYS.length; i++) {
+    used.add(ALL_KEYS[i]);
+  }
+  saveUsed(used);
+  localStorage.setItem("mftahAlkhair.skip200Applied", "1");
+  update();
+  showToast("تم تخطي أول 500 كود بنجاح!");
+});
+
+document.getElementById("btnSkipNext50")?.addEventListener("click", () => {
+  skipCodes(50);
+});
 
 // Intro animation controller
 function playDoorIntro(force = false) {
