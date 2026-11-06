@@ -1742,16 +1742,17 @@ async function claim(options = {}) {
       keyActionsRow.classList.add("show");
 
       update();
+      button.disabled = false; // Re-enable so FAB & button can claim again
 
       if (shouldRedirect) {
         showToast("تم نسخ الكود! جارٍ فتح تطبيق نُسُك…");
+        // Always open in a new tab — NEVER navigate the current page
+        // so the user returns to this site (not the app store)
         try {
-          const win = window.open(nusukAppUrl, "_blank", "noopener,noreferrer");
-          if (!win && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            window.location.href = nusukAppUrl;
-          }
+          window.open(nusukAppUrl, "_blank", "noopener,noreferrer");
         } catch (_) {
-          window.location.href = nusukAppUrl;
+          // If popup blocked, just show the link — don't navigate away
+          showToast("تم نسخ الكود! اضغط على 'افتح نسك' للذهاب للتطبيق.");
         }
       } else {
         showToast("✓ تم نسخ كود جديد بنجاح: " + key);
