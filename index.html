@@ -71,6 +71,183 @@ body::before {
 button { font: inherit; cursor: pointer; border: none; outline: none; }
 a { color: inherit; text-decoration: none; }
 
+/* ========================================================
+   Floating Key Widget (زر المفتاح العائم فوق كل التطبيقات)
+   ======================================================== */
+.floating-key-widget {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+/* Callout Hint ("دوس هنا") matching user mockup */
+.fab-callout {
+  background: #ffffff;
+  color: var(--green-900);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(6, 36, 29, 0.18), 0 0 0 2px var(--gold-400);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  animation: fab-float-bounce 2s ease-in-out infinite;
+  pointer-events: none;
+  position: relative;
+}
+.fab-callout::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: 22px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--gold-400);
+}
+@keyframes fab-float-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* The Round Golden Key Ball */
+.fab-ball {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 32%, #fff8de 0%, #f7d885 35%, #dfad3b 70%, #9a6f19 100%);
+  border: 3.5px solid #ffffff;
+  box-shadow: 
+    0 10px 30px rgba(183, 136, 34, 0.5),
+    0 4px 14px rgba(0, 0, 0, 0.2),
+    inset 0 3px 6px rgba(255, 255, 255, 0.8),
+    inset 0 -3px 6px rgba(115, 80, 10, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  position: relative;
+  transition: transform 0.18s cubic-bezier(0.2, 0.9, 0.3, 1.2), box-shadow 0.18s ease;
+  animation: fab-glow-pulse 2.8s infinite;
+}
+.fab-ball:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 14px 40px rgba(183, 136, 34, 0.7),
+    0 6px 18px rgba(0, 0, 0, 0.25),
+    inset 0 3px 6px rgba(255, 255, 255, 0.9);
+}
+.fab-ball:active {
+  cursor: grabbing;
+  transform: scale(0.92);
+}
+.fab-ball svg {
+  width: 34px;
+  height: 34px;
+  stroke: #422a03;
+  stroke-width: 2.2;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6));
+  pointer-events: none;
+}
+
+@keyframes fab-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(183, 136, 34, 0.5), 0 4px 14px rgba(0,0,0,0.2), inset 0 3px 6px rgba(255,255,255,0.8);
+  }
+  50% {
+    box-shadow: 0 12px 38px rgba(223, 173, 59, 0.8), 0 0 20px rgba(223, 173, 59, 0.6), inset 0 3px 6px rgba(255,255,255,0.9);
+  }
+}
+
+/* PiP Always-On-Top Mini Pin Button */
+.fab-pip-btn {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--green-900);
+  color: var(--gold-300);
+  border: 2px solid #ffffff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.2s;
+}
+.fab-pip-btn:hover {
+  transform: scale(1.18);
+  background: var(--green-800);
+}
+
+/* Floating Success Badge (Shows copied code on tap) */
+.fab-result-card {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  background: linear-gradient(145deg, #06241d, #0d3d32);
+  color: #ffffff;
+  border: 2px solid var(--gold-400);
+  border-radius: 16px;
+  padding: 12px 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(223, 173, 59, 0.3);
+  direction: rtl;
+  min-width: 220px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(12px) scale(0.92);
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  z-index: 10000000;
+}
+.fab-result-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.fab-result-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7ef29d;
+  margin-bottom: 4px;
+}
+.fab-result-code {
+  display: block;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: var(--gold-300);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 6px 0;
+  border: 1px dashed rgba(223, 173, 59, 0.45);
+}
+.fab-result-sub {
+  font-size: 11px;
+  color: #e5f3ed;
+  opacity: 0.9;
+}
+
 .container {
   width: min(100% - 32px, 940px);
   margin: 0 auto;
@@ -1516,8 +1693,13 @@ function loopParticles() {
   }
 }
 
-async function claim(e) {
-  if (button.disabled) return;
+async function claim(options = {}) {
+  const isEvent = options && typeof options.preventDefault === "function";
+  const opts = isEvent ? { redirect: true, sourceElement: button } : options;
+  const shouldRedirect = opts.redirect !== false;
+  const triggerEl = opts.sourceElement || button;
+
+  if (button.disabled && !opts.force) return null;
   button.disabled = true;
 
   // Haptic feedback
@@ -1526,8 +1708,12 @@ async function claim(e) {
   }
 
   // Trigger sparkles from button position
-  const rect = button.getBoundingClientRect();
-  createParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+  if (triggerEl && triggerEl.getBoundingClientRect) {
+    const rect = triggerEl.getBoundingClientRect();
+    createParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+  }
+
+  let claimedKey = null;
 
   const run = async () => {
     const used = readUsed();
@@ -1535,7 +1721,7 @@ async function claim(e) {
     if (!key) {
       update();
       showToast("عذراً، لا توجد مفاتيح متاحة حالياً.");
-      return;
+      return null;
     }
     try {
       await copyText(key);
@@ -1543,6 +1729,7 @@ async function claim(e) {
       saveUsed(used);
 
       currentClaimedKey = key;
+      claimedKey = key;
       codebox.innerHTML = `
         <span style="font-size: 24px; font-family: monospace; letter-spacing: 2px;">${key}</span>
         <span class="codebox-badge">✓ تم النسخ! الصقه في خانة الرمز بتطبيق نُسُك</span>
@@ -1555,21 +1742,26 @@ async function claim(e) {
       keyActionsRow.classList.add("show");
 
       update();
-      showToast("تم نسخ الكود! جارٍ فتح تطبيق نُسُك…");
 
-      // Open Nusuk App directly on phone (or web)
-      try {
-        const win = window.open(nusukAppUrl, "_blank", "noopener,noreferrer");
-        if (!win && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      if (shouldRedirect) {
+        showToast("تم نسخ الكود! جارٍ فتح تطبيق نُسُك…");
+        try {
+          const win = window.open(nusukAppUrl, "_blank", "noopener,noreferrer");
+          if (!win && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            window.location.href = nusukAppUrl;
+          }
+        } catch (_) {
           window.location.href = nusukAppUrl;
         }
-      } catch (_) {
-        window.location.href = nusukAppUrl;
+      } else {
+        showToast("✓ تم نسخ كود جديد بنجاح: " + key);
       }
+      return key;
     } catch (err) {
       button.disabled = false;
       showToast("تعذر النسخ التلقائي. يرجى السماح بالحافظة ثم المحاولة.");
       console.error(err);
+      return null;
     }
   };
 
@@ -1585,6 +1777,7 @@ async function claim(e) {
     console.error(err);
   }
   update();
+  return claimedKey;
 }
 
 button.addEventListener("click", claim);
@@ -1694,8 +1887,181 @@ replayIntro.addEventListener("click", () => {
   playDoorIntro(true);
 });
 
-playDoorIntro(false);
+  // Floating Key Widget Controller (المفتاح العائم فوق كل التطبيقات)
+  const fabWidget = document.getElementById("floatingKeyWidget");
+  const fabBall = document.getElementById("fabBall");
+  const fabCallout = document.getElementById("fabCallout");
+  const fabResultCard = document.getElementById("fabResultCard");
+  const fabResultCode = document.getElementById("fabResultCode");
+  const fabPipBtn = document.getElementById("fabPipBtn");
+
+  let isDragging = false;
+  let hasDragged = false;
+  let startX = 0, startY = 0;
+  let initialLeft = 0, initialTop = 0;
+  let resultTimer = null;
+
+  function showFabResult(code) {
+    if (!code) return;
+    fabResultCode.textContent = code;
+    fabResultCard.classList.add("show");
+    if (fabCallout) fabCallout.style.display = "none";
+    clearTimeout(resultTimer);
+    resultTimer = setTimeout(() => {
+      fabResultCard.classList.remove("show");
+    }, 3800);
+  }
+
+  // Click handler on fabBall - copies next key without redirecting
+  if (fabBall) {
+    fabBall.addEventListener("click", async () => {
+      if (hasDragged) return;
+      const key = await claim({ redirect: false, sourceElement: fabBall });
+      if (key) {
+        showFabResult(key);
+      }
+    });
+
+    // Touch & Mouse Dragging
+    function onPointerDown(e) {
+      if (e.target === fabPipBtn) return;
+      isDragging = true;
+      hasDragged = false;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      startX = clientX;
+      startY = clientY;
+
+      const rect = fabWidget.getBoundingClientRect();
+      initialLeft = rect.left;
+      initialTop = rect.top;
+      fabWidget.style.right = "auto";
+      fabWidget.style.bottom = "auto";
+      fabWidget.style.left = initialLeft + "px";
+      fabWidget.style.top = initialTop + "px";
+    }
+
+    function onPointerMove(e) {
+      if (!isDragging) return;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      const dx = clientX - startX;
+      const dy = clientY - startY;
+
+      if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+        hasDragged = true;
+      }
+
+      let newX = initialLeft + dx;
+      let newY = initialTop + dy;
+
+      const maxX = window.innerWidth - fabBall.offsetWidth - 12;
+      const maxY = window.innerHeight - fabBall.offsetHeight - 12;
+      newX = Math.max(12, Math.min(newX, maxX));
+      newY = Math.max(12, Math.min(newY, maxY));
+
+      fabWidget.style.left = newX + "px";
+      fabWidget.style.top = newY + "px";
+    }
+
+    function onPointerUp() {
+      isDragging = false;
+      setTimeout(() => { hasDragged = false; }, 80);
+    }
+
+    fabBall.addEventListener("mousedown", onPointerDown);
+    window.addEventListener("mousemove", onPointerMove);
+    window.addEventListener("mouseup", onPointerUp);
+
+    fabBall.addEventListener("touchstart", onPointerDown, { passive: true });
+    window.addEventListener("touchmove", onPointerMove, { passive: true });
+    window.addEventListener("touchend", onPointerUp);
+
+    // Document Picture-in-Picture (نافذة عائمة فوق كل التطبيقات والبرامج)
+    if ('documentPictureInPicture' in window && fabPipBtn) {
+      fabPipBtn.style.display = "flex";
+      fabPipBtn.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        try {
+          const pipWindow = await window.documentPictureInPicture.requestWindow({
+            width: 140,
+            height: 155,
+          });
+
+          document.querySelectorAll('link[rel="stylesheet"], style').forEach(s => {
+            pipWindow.document.head.appendChild(s.cloneNode(true));
+          });
+
+          pipWindow.document.body.style.margin = "0";
+          pipWindow.document.body.style.padding = "0";
+          pipWindow.document.body.style.background = "#06241d";
+          pipWindow.document.body.style.display = "flex";
+          pipWindow.document.body.style.flexDirection = "column";
+          pipWindow.document.body.style.alignItems = "center";
+          pipWindow.document.body.style.justifyContent = "center";
+          pipWindow.document.body.style.fontFamily = "Cairo, sans-serif";
+          pipWindow.document.body.style.height = "100vh";
+          pipWindow.document.body.style.overflow = "hidden";
+          pipWindow.document.body.style.direction = "rtl";
+
+          pipWindow.document.body.innerHTML = `
+            <button id="pipKeyBtn" style="
+              width:64px; height:64px; border-radius:50%;
+              background: radial-gradient(circle at 35% 32%, #fff8de 0%, #f7d885 35%, #dfad3b 70%, #9a6f19 100%);
+              border: 3px solid #fff; cursor: pointer;
+              box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+              display: flex; align-items:center; justify-content:center;
+              font-size: 28px;
+            ">🔑</button>
+            <div id="pipStatus" style="color:#f9e19d; font-size:11px; font-weight:bold; margin-top:6px; text-align:center;">اضغط للنسخ</div>
+          `;
+
+          const pipKeyBtn = pipWindow.document.getElementById("pipKeyBtn");
+          const pipStatus = pipWindow.document.getElementById("pipStatus");
+
+          pipKeyBtn.onclick = async () => {
+            const key = await claim({ redirect: false, sourceElement: fabBall });
+            if (key) {
+              pipStatus.textContent = "تم النسخ: " + key;
+              pipStatus.style.color = "#7ef29d";
+              showFabResult(key);
+            }
+          };
+        } catch (err) {
+          console.warn("PiP request failed:", err);
+        }
+      });
+    }
+  }
+
+  playDoorIntro(false);
 })();
 </script>
+
+<!-- Floating Key Widget (المفتاح العائم فوق كل التطبيقات) -->
+<div class="floating-key-widget" id="floatingKeyWidget" role="region" aria-label="مفتاح نسك العائم">
+  <div class="fab-callout" id="fabCallout">
+    <span>دوس هنا</span>
+    <span>🔑</span>
+  </div>
+
+  <div class="fab-result-card" id="fabResultCard" role="alert" aria-live="assertive">
+    <div class="fab-result-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>تم نسخ كود جديد بنجاح!</span>
+    </div>
+    <span class="fab-result-code" id="fabResultCode">NG-XXXXXXXX</span>
+    <div class="fab-result-sub">جاهز للصق الآن داخل تطبيق نُسُك 📱</div>
+  </div>
+
+  <div class="fab-ball" id="fabBall" role="button" tabindex="0" aria-label="اضغط لنسخ كود جديد دون مغادرة نُسُك" title="اضغط لنسخ كود جديد مباشرة دون توجيه">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="8" cy="15" r="5"/>
+      <path d="m11.5 11.5 8-8M16 4l4 4m-7 1 3 3"/>
+    </svg>
+    <button class="fab-pip-btn" id="fabPipBtn" type="button" title="تثبيت المفتاح كنافذة عائمة فوق كل التطبيقات (Picture-in-Picture)">📌</button>
+  </div>
+</div>
+
 </body>
 </html>
